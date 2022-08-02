@@ -2,6 +2,37 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
+
+# Pages
+
+- Home
+- Service
+- About
+- Login
+- Lignup
+- ( maybe i add another page in future )
+
+# Componnents
+
+- Header
+- Footer
+- SingleService
+
+# Libraries
+
+- Tailwind
+- Headless
+- MUI
+- React Router
+- Redux
+- AOS
+- Swiper js ( maybe )
+- google-map-react ( maybe )
+
+# API
+
+iwant to make my own api by Laravel
+
 ## Available Scripts
 
 In the project directory, you can run:
