@@ -31,7 +31,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # API
 
-iwant to make my own api by Laravel
+i want to make my own api by json
 
 ## Available Scripts
 
