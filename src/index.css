@@ -1,6 +1,17 @@
 html,body{
   scroll-behavior: smooth;
 }
+.wena{
+  animation: anime infinite 40s ease-in-out;
+}
+@keyframes anime{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
 *::-webkit-scrollbar{
   width: 1px;
   height: 5px;
@@ -23,9 +34,9 @@ html,body{
 .hamburger-1 .line{
   width: 25px !important;
   height: 2px !important;
-  background-color: white !important;
+  background-color: green !important;
   display: block !important;
-  color: white !important;
+  color: green !important;
   margin-right: 10px !important;
   margin: 6px auto;   
 -webkit-transition: all 0.3s ease-in-out;

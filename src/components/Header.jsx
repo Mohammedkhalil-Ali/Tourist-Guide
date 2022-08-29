@@ -15,10 +15,10 @@ function ChangeShow(){
 }
   return (
     <Fragment>
-        <header class="w-100vw h-[10vh] relative lg:relative top-0 bg-[#12141D] text-white overflow-hidden "  id="home">
+        <header class="w-100vw h-[10vh] relative lg:relative top-0 shadow-sm bg-[#ffffff] text-green-600 overflow-hidden "  id="home">
         <div class="logo h-[10vh] w-[100vw] flex justify-between items-center">
-            <p class="w-5/6 md:w-4/6 pl-8 text-xl font-mono">Mohammed<span class="text-red-500">Khalil</span></p>
-        <nav class="text-white text-xl font-mono
+            <p class="w-5/6 md:w-4/6 pl-8 text-2xl font-mono text-black"><span class="text-green-600 text-4xl">T</span>ourist<span class="text-green-600 text-4xl">G</span>uide</p>
+        <nav class="text-green-600 text-xl font-mono
         ">
             <p   className={`hidden
                         lg:inline
@@ -26,9 +26,9 @@ function ChangeShow(){
                         xl:px-16
                         h-[10vh]
                         p-[20px]
-                        hover:bg-[#0630ff]
+                        hover:bg-[#dfeee3]
                         cursor-pointer
-                        ${isactive=='home'?'text-red-500':''}
+                        ${isactive=='home'?'text-black':''}
                             `}
                         id="home"
                         onClick={()=>ChangeActive('home')}
@@ -40,13 +40,13 @@ function ChangeShow(){
                         xl:px-16
                         h-[10vh]
                         p-[20px]
-                        hover:bg-[#171923]
+                        hover:bg-[#dfeee3]
                         cursor-pointer
-                        ${isactive=='skills'?'text-red-500':''}
+                        ${isactive=='skills'?'text-black':''}
                             `}
                         id="skills"
                         onClick={()=>ChangeActive('skills')}
-                        // :class="isactive=='skills'?'text-red-500':''"
+                        // :class="isactive=='skills'?'text-black':''"
                         // @click="isactiveRoute('skills')"
                         >Skills</p>
             <p   className={`hidden
@@ -55,12 +55,12 @@ function ChangeShow(){
                         xl:px-16
                         h-[10vh]
                         p-[20px]
-                        hover:bg-[#171923]
+                        hover:bg-[#dfeee3]
                         cursor-pointer
-                        ${isactive=='project'?'text-red-500':''}
+                        ${isactive=='project'?'text-black':''}
                             `}
                         onClick={()=>ChangeActive('project')}
-                        // :class="isactive=='project'?'text-red-500':''"
+                        // :class="isactive=='project'?'text-black':''"
                         // @click="isactiveRoute('project')"
                         >Project</p>
                         
@@ -71,12 +71,12 @@ function ChangeShow(){
                         xl:px-16
                         h-[10vh]
                         p-[20px]
-                        hover:bg-[#171923]
+                        hover:bg-[#dfeee3]
                         cursor-pointer
-                        ${isactive=='about'?'text-red-500':''}
+                        ${isactive=='about'?'text-black':''}
                             `}
                         onClick={()=>ChangeActive('about')}
-                        // :class="isactive=='about'?'text-red-500':''"
+                        // :class="isactive=='about'?'text-black':''"
                         // @click="isactiveRoute('about')"
                         >About</p>
 
@@ -99,52 +99,52 @@ function ChangeShow(){
         </div>
     </header>
 
-    <nav className={`text-white text-xl fixed top-[10vh] w-full lg:invisible bg-[#12141D] overflow-hidden transition-all duration-500  ${show?'visible h-[90vh]':'invisible h-0'} `}
+    <nav className={`text-green-600 text-xl fixed top-[10vh] w-full lg:invisible bg-[#ecffe6] overflow-hidden transition-all duration-500  ${show?'visible h-[90vh]':'invisible h-0'} `}
         // :class="show?'visible h-[85vh]':'invisible h-0'"
        
                 >
             <p   className={`
-                    hover:bg-[#171923]
+                    hover:bg-[#ffffff]
                         cursor-pointer
                         py-4
                         px-8
-                        ${isactive=='home'?'text-red-500':''}
+                        ${isactive=='home'?'text-black':''}
                         `}
                         onClick={()=>ChangeActive('home')}
-                        // :class="isactive=='home'?'text-red-500':''"
+                        // :class="isactive=='home'?'text-black':''"
                         // @click="isactiveRoute('home')"
                         >Home</p>
             <p   className={`
-                    hover:bg-[#171923]
+                    hover:bg-[#ffffff]
                         cursor-pointer
                         py-4
                         px-8
-                        ${isactive=='skills'?'text-red-500':''}
+                        ${isactive=='skills'?'text-black':''}
                         `}
                         onClick={()=>ChangeActive('skills')}
-                        // :class="isactive=='skills'?'text-red-500':''"
+                        // :class="isactive=='skills'?'text-black':''"
                         // @click="isactiveRoute('skills')"
                         >Skills</p>
             <p   className={`
-                    hover:bg-[#171923]
+                    hover:bg-[#ffffff]
                         cursor-pointer
                         py-4
                         px-8
-                        ${isactive=='project'?'text-red-500':''}
+                        ${isactive=='project'?'text-black':''}
                         `}
                         onClick={()=>ChangeActive('project')}
-                        // :class="isactive=='project'?'text-red-500':''"
+                        // :class="isactive=='project'?'text-black':''"
                         // @click="isactiveRoute('project')"
                         >Project</p>
             <p   className={`
-                    hover:bg-[#171923]
+                    hover:bg-[#ffffff]
                         cursor-pointer
                         py-4
                         px-8
-                        ${isactive=='about'?'text-red-500':''}
+                        ${isactive=='about'?'text-black':''}
                         `}
                         onClick={()=>ChangeActive('about')}
-                        // :class="isactive=='about'?'text-red-500':''"
+                        // :class="isactive=='about'?'text-black':''"
                         // @click="isactiveRoute('about')"
                         >About</p>
         </nav>
