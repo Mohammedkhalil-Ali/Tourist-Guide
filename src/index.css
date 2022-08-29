@@ -1,17 +1,50 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html,body{
+  scroll-behavior: smooth;
+}
+*::-webkit-scrollbar{
+  width: 1px;
+  height: 5px;
+}
+*::-webkit-scrollbar-track{
+  background: none;
+}
+*::-webkit-scrollbar-thumb{
+  width: 1px;
+  height: 1px;
+  background: none;
+  border-radius: 20px;
+}
+*::-webkit-scrollbar-thumb:hover{
+  background: none;
+}
+.hamburger{
+  cursor: pointer;
+}
+.hamburger-1 .line{
+  width: 25px !important;
+  height: 2px !important;
+  background-color: white !important;
+  display: block !important;
+  color: white !important;
+  margin-right: 10px !important;
+  margin: 6px auto;   
+-webkit-transition: all 0.3s ease-in-out;
+-o-transition: all 0.3s ease-in-out;
+transition: all 0.3s ease-in-out;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#hamburger.is-active .line:nth-child(2){
+  opacity: 0;
+}
+#hamburger.is-active .line:nth-child(1){
+  -webkit-transform: translateY(8px) rotate(45deg);
+  -ms-transform: translateY(8px) rotate(45deg);
+  -o-transform: translateY(8px) rotate(45deg);
+  transform: translateY(8px) rotate(45deg);
+}
+#hamburger.is-active .line:nth-child(3){
+  -webkit-transform: translateY(-8px) rotate(-45deg);
+  -ms-transform: translateY(-8px) rotate(-45deg);
+  -o-transform: translateY(-8px) rotate(-45deg);
+  transform: translateY(-8px) rotate(-45deg);
 }
