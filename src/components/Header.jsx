@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Fragment } from 'react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 export default function TabPanel() {
@@ -20,7 +21,7 @@ function ChangeShow(){
             <p class="w-5/6 md:w-4/6 pl-8 text-2xl font-mono text-black"><span class="text-green-600 text-4xl">T</span>ourist<span class="text-green-600 text-4xl">G</span>uide</p>
         <nav class="text-green-600 text-xl font-mono
         ">
-            <p   className={`hidden
+            <Link to='/'   className={`hidden
                         lg:inline
                         lg:px-10
                         xl:px-16
@@ -33,8 +34,8 @@ function ChangeShow(){
                         id="home"
                         onClick={()=>ChangeActive('home')}
                         // @click="isactiveRoute('home')"
-                        >Home</p>
-            <p   className={`hidden
+                        >Home</Link>
+            <Link to='/place'   className={`hidden
                         lg:inline
                         lg:px-10
                         xl:px-16
@@ -42,14 +43,14 @@ function ChangeShow(){
                         p-[20px]
                         hover:bg-[#dfeee3]
                         cursor-pointer
-                        ${isactive=='skills'?'text-black':''}
+                        ${isactive=='Place'?'text-black':''}
                             `}
                         id="skills"
-                        onClick={()=>ChangeActive('skills')}
+                        onClick={()=>ChangeActive('Place')}
                         // :class="isactive=='skills'?'text-black':''"
                         // @click="isactiveRoute('skills')"
-                        >Place</p>
-            <p   className={`hidden
+                        >Place</Link>
+            <Link to='/service'   className={`hidden
                         lg:inline
                         lg:px-10
                         xl:px-16
@@ -57,14 +58,14 @@ function ChangeShow(){
                         p-[20px]
                         hover:bg-[#dfeee3]
                         cursor-pointer
-                        ${isactive=='project'?'text-black':''}
+                        ${isactive=='Service'?'text-black':''}
                             `}
-                        onClick={()=>ChangeActive('project')}
+                        onClick={()=>ChangeActive('Service')}
                         // :class="isactive=='project'?'text-black':''"
                         // @click="isactiveRoute('project')"
-                        >Service</p>
+                        >Service</Link>
                         
-            <p   className={`
+            <Link to='/about'   className={`
                         hidden
                         lg:inline
                         lg:px-10
@@ -78,7 +79,7 @@ function ChangeShow(){
                         onClick={()=>ChangeActive('about')}
                         // :class="isactive=='about'?'text-black':''"
                         // @click="isactiveRoute('about')"
-                        >About</p>
+                        >About</Link>
 
         </nav>
      {/* @click="show = !show" */}
@@ -103,7 +104,7 @@ function ChangeShow(){
         // :class="show?'visible h-[85vh]':'invisible h-0'"
        
                 >
-            <p   className={`
+            <Link to='/'  className={`
                     hover:bg-[#ffffff]
                         cursor-pointer
                         py-4
@@ -113,30 +114,30 @@ function ChangeShow(){
                         onClick={()=>ChangeActive('home')}
                         // :class="isactive=='home'?'text-black':''"
                         // @click="isactiveRoute('home')"
-                        >Home</p>
-            <p   className={`
+                        >Home</Link>
+            <Link to='/place'  className={`
                     hover:bg-[#ffffff]
                         cursor-pointer
                         py-4
                         px-8
-                        ${isactive=='skills'?'text-black':''}
+                        ${isactive=='Place'?'text-black':''}
                         `}
-                        onClick={()=>ChangeActive('skills')}
-                        // :class="isactive=='skills'?'text-black':''"
-                        // @click="isactiveRoute('skills')"
-                        >Skills</p>
-            <p   className={`
+                        onClick={()=>ChangeActive('Place')}
+                        // :class="isactive=='Place'?'text-black':''"
+                        // @click="isactiveRoute('Place')"
+                        >Place</Link>
+            <Link  to='/service' className={`
                     hover:bg-[#ffffff]
                         cursor-pointer
                         py-4
                         px-8
-                        ${isactive=='project'?'text-black':''}
+                        ${isactive=='Service'?'text-black':''}
                         `}
-                        onClick={()=>ChangeActive('project')}
-                        // :class="isactive=='project'?'text-black':''"
-                        // @click="isactiveRoute('project')"
-                        >Project</p>
-            <p   className={`
+                        onClick={()=>ChangeActive('Service')}
+                        // :class="isactive=='Service'?'text-black':''"
+                        // @click="isactiveRoute('Service')"
+                        >Service</Link>
+            <Link to='/about'  className={`
                     hover:bg-[#ffffff]
                         cursor-pointer
                         py-4
@@ -146,7 +147,7 @@ function ChangeShow(){
                         onClick={()=>ChangeActive('about')}
                         // :class="isactive=='about'?'text-black':''"
                         // @click="isactiveRoute('about')"
-                        >About</p>
+                        >About</Link>
         </nav>
 
     </Fragment>
