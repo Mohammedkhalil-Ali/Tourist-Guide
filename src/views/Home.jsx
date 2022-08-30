@@ -7,8 +7,9 @@ export default function Home() {
         <Header />
         
         <div className="datakan m-auto md:flex md:items-center md:justify-between h-[85vh] z-20">
+          <div className='md:w-[70%] w-full flex justify-center md:flex md:justify-start'>
           <div className="wena image mt-4 ml-4 relative
-           flex justify-start items-center  border-2 rounded-full border-dashed w-[25%] h-[63%]">
+           flex justify-start items-center  border-2 rounded-full border-dashed w-[250px] sm:w-[350px] sm:h-[55vh] h-[250px]">
             
             <div className="square w-6 h-6 rounded-sm hover:rotate-45 hover:scale-125 hover:bg-gray-400 duration-700 absolute top-[26%] transition-all -rotate-[20deg] bg-gray-300"></div>
             <div className="circle w-6 h-6 rounded-full  hover:scale-125 hover:bg-gray-400 duration-700 absolute -right-[1%] top-[30%] transition-all bg-gray-300"></div>
@@ -25,11 +26,12 @@ export default function Home() {
 
         
           </div>
-          <div className="nusin mt-4 md:mt-0 text-center md:text-left md:text-xl lg:text-3xl text-black md:mr-24  z-20">
-            <p>Wellcome to <span class="text-green-600 text-3xl">Tourist Guide</span></p>
-            <p>In our Website you maght now about alot of hotel <br /> motel,place and malls, click here to know <br />
-            abut all our service and offers</p>
-            <p className='bg-green-600 m-auto md:m-0 md:mt-5 text-white text-xl w-48 mt-4 p-2 rounded-md text-center cursor-pointer'>More Service</p>
+          </div>
+          <div className="nusin mt-4 md:mt-0 text-center md:text-left md:text-xl lg:text-2xl text-black lg:ml-24 md:ml-12 w-full  z-20">
+            <p>Wellcome to <span class="text-green-600 text-2xl">Tourist Guide</span></p>
+            <p>In our Website you maght now about alot of hotel <br /> motel places and malls, click here to know
+            abut all our service and offers</p> <br />
+            <p className='m-auto md:m-0 text-green-600 text-xl rounded-md text-center sm:text-left cursor-pointer'>More Service <i class="fa-solid fa-arrow-right"></i></p>
           </div>
         </div>
          </Fragment>
