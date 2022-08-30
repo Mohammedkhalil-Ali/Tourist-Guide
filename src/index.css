@@ -2,7 +2,7 @@ html,body{
   scroll-behavior: smooth;
 }
 .wena{
-  animation: anime infinite 40s ease-in-out;
+  animation: anime infinite 80s linear;
 }
 @keyframes anime{
   0%{
@@ -11,6 +11,13 @@ html,body{
   100%{
     transform: rotate(360deg);
   }
+}
+.triangle {
+  width: 0;
+  height: 0;
+  border: 15px solid transparent;
+  border-top: 0;
+  border-bottom: 30px solid #D1D5DB;
 }
 *::-webkit-scrollbar{
   width: 1px;

@@ -48,7 +48,7 @@ function ChangeShow(){
                         onClick={()=>ChangeActive('skills')}
                         // :class="isactive=='skills'?'text-black':''"
                         // @click="isactiveRoute('skills')"
-                        >Skills</p>
+                        >Place</p>
             <p   className={`hidden
                         lg:inline
                         lg:px-10
@@ -62,7 +62,7 @@ function ChangeShow(){
                         onClick={()=>ChangeActive('project')}
                         // :class="isactive=='project'?'text-black':''"
                         // @click="isactiveRoute('project')"
-                        >Project</p>
+                        >Service</p>
                         
             <p   className={`
                         hidden
@@ -99,7 +99,7 @@ function ChangeShow(){
         </div>
     </header>
 
-    <nav className={`text-green-600 text-xl fixed top-[10vh] w-full lg:invisible bg-[#ecffe6] overflow-hidden transition-all duration-500  ${show?'visible h-[90vh]':'invisible h-0'} `}
+    <nav className={`text-green-600 z-50 text-xl fixed top-[10vh] w-full lg:invisible bg-[#ecffe6] overflow-hidden transition-all duration-500  ${show?'visible h-[90vh]':'invisible h-0'} `}
         // :class="show?'visible h-[85vh]':'invisible h-0'"
        
                 >
