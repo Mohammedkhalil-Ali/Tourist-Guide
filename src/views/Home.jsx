@@ -7,25 +7,28 @@ export default function Home() {
         <Header />
         
         <div className="datakan m-auto md:flex md:items-center md:justify-between h-[85vh] z-20">
-          <div className='md:w-[70%] w-full flex justify-center md:flex md:justify-start'>
-          <div className="wena image mt-4 ml-4 relative
+          <div className='relative md:w-[70%] w-full flex justify-center md:flex md:justify-start'>
+          <div className="wena image mt-4 ml-4
            flex justify-start items-center  border-2 rounded-full border-dashed w-[250px] sm:w-[350px] sm:h-[55vh] h-[250px]">
+
+
+
             
             <div className="square w-6 h-6 rounded-sm hover:rotate-45 hover:scale-125 hover:bg-gray-400 duration-700 absolute top-[26%] transition-all -rotate-[20deg] bg-gray-300"></div>
             <div className="circle w-6 h-6 rounded-full  hover:scale-125 hover:bg-gray-400 duration-700 absolute -right-[1%] top-[30%] transition-all bg-gray-300"></div>
-            <div className=" hidden w-10/12 md:grid md:grid-cols-2  md:gap-10 transition-all ">
-        {/* <img src={require("../assets/image/e.jpg")} className='w-20 h-20 md:w-32 md:h-32 mt-2 rounded-full -rotate-[120deg]' alt="" srcset="" />
-        <img src={require("../assets/image/f.jpg")} className='w-20 h-20 md:w-32 md:h-32 ml-20 md:ml-40 mt-2 rounded-full rotate-[140deg]' alt="" srcset="" />
-        <img src={require("../assets/image/g.jpg")} className='w-20 h-20 md:w-32 md:h-32 ml-20 md:ml-32 rounded-full rotate-180' alt="" srcset="" />
-        <img src={require("../assets/image/h.jpg")} className='w-20 h-20 md:w-32 md:h-32 rounded-full rotate-180' alt="" srcset="" /> */}
-</div>
+           
 <div className="image mt-4 ml-4 absolute transition-all duration-[80s]
-           border-2 rounded-full border-dashed w-[50%] h-[50%] top-[20%] right-[25%]">
+           border-2 rounded-full border-solid w-[65%] h-[65%] top-[12%] right-[18%]">
             <div className="triangle hover:rotate-45 hover:scale-125 hover:border-b-gray-400 duration-700 absolute top-[90%] right-[40%] -rotate-90"></div>
 </div>
 
         
           </div>
+          <div className="absolute top-[40%] left-[45%] md:top-36 md:left-40">
+<img src={require('../assets/image/touristguide.png')} className='w-16 h-16 md:w-20 md:h-20 rounded-full -scale-x-100 hover:scale-150 cursor-pointer transition-all duration-700' alt="" srcset="" />
+ 
+</div>
+         
           </div>
           <div className="nusin mt-4 md:mt-0 text-center md:text-left md:text-xl lg:text-2xl text-black lg:ml-24 md:ml-12 w-full  z-20">
             <p>Wellcome to <span class="text-green-600 text-2xl">Tourist Guide</span></p>
