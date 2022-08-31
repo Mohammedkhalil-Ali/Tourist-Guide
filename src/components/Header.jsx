@@ -104,50 +104,54 @@ function ChangeShow(){
         // :class="show?'visible h-[85vh]':'invisible h-0'"
        
                 >
-            <Link to='/'  className={`
+                    <p 
+                    className={`
                     hover:bg-[#ffffff]
                         cursor-pointer
                         py-4
                         px-8
                         ${isactive=='home'?'text-black':''}
                         `}
-                        onClick={()=>ChangeActive('home')}
+                        onClick={()=>ChangeActive('home')}>
+            <Link to='/'  
                         // :class="isactive=='home'?'text-black':''"
                         // @click="isactiveRoute('home')"
                         >Home</Link>
-            <Link to='/place'  className={`
-                    hover:bg-[#ffffff]
-                        cursor-pointer
-                        py-4
-                        px-8
-                        ${isactive=='Place'?'text-black':''}
-                        `}
-                        onClick={()=>ChangeActive('Place')}
+                        </p>
+                        <p
+                        className={`
+                        hover:bg-[#ffffff]
+                            cursor-pointer
+                            py-4
+                            px-8
+                            ${isactive=='Place'?'text-black':''}
+                            `}
+                            onClick={()=>ChangeActive('Place')}
+                            >
+            <Link to='/place'  
                         // :class="isactive=='Place'?'text-black':''"
                         // @click="isactiveRoute('Place')"
-                        >Place</Link>
-            <Link  to='/service' className={`
-                    hover:bg-[#ffffff]
-                        cursor-pointer
-                        py-4
-                        px-8
-                        ${isactive=='Service'?'text-black':''}
-                        `}
-                        onClick={()=>ChangeActive('Service')}
-                        // :class="isactive=='Service'?'text-black':''"
-                        // @click="isactiveRoute('Service')"
-                        >Service</Link>
-            <Link to='/about'  className={`
-                    hover:bg-[#ffffff]
-                        cursor-pointer
-                        py-4
-                        px-8
-                        ${isactive=='about'?'text-black':''}
-                        `}
-                        onClick={()=>ChangeActive('about')}
-                        // :class="isactive=='about'?'text-black':''"
-                        // @click="isactiveRoute('about')"
-                        >About</Link>
+                        >Place</Link></p>
+                        <p
+                        className={`
+                        hover:bg-[#ffffff]
+                            cursor-pointer
+                            py-4
+                            px-8
+                            ${isactive=='Service'?'text-black':''}
+                            `}
+                            onClick={()=>ChangeActive('Service')}>
+            <Link  to='/service'>Service</Link></p>
+                        <p
+                         className={`
+                         hover:bg-[#ffffff]
+                             cursor-pointer
+                             py-4
+                             px-8
+                             ${isactive=='about'?'text-black':''}
+                             `}
+                             onClick={()=>ChangeActive('about')}>
+            <Link to='/about' >About</Link></p>
         </nav>
 
     </Fragment>

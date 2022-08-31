@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import Header from '../components/Header'
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
@@ -34,7 +35,7 @@ export default function Home() {
             <p>Wellcome to <span class="text-green-600 text-2xl">Tourist Guide</span></p>
             <p>In our Website you maght now about alot of hotel <br /> motel places and malls, click here to know
             abut all our service and offers</p> <br />
-            <p className='m-auto md:m-0 text-green-600 text-xl rounded-md text-center sm:text-left cursor-pointer'>More Service <i class="fa-solid fa-arrow-right"></i></p>
+            <p className='m-auto md:m-0 text-green-600 text-xl rounded-md text-center sm:text-left cursor-pointer'><Link to='/service'> More Service <i class="fa-solid fa-arrow-right"></i></Link></p>
           </div>
         </div>
          </Fragment>
