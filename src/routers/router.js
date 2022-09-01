@@ -8,6 +8,7 @@ import Home from '../views/Home.jsx'
 import Place from '../views/Place.jsx'
 import Service from '../views/Service.jsx'
 import About from '../views/About.jsx'
+import MoreDetail from '../views/MoreDetail.jsx'
 // import your route components too
 
 export default function router() {
@@ -21,6 +22,7 @@ export default function router() {
       <Route path="/place" element={<Place />} />
       <Route path="/service" element={<Service />} />
       <Route path="/about" element={<About />} />
+      <Route path="/moredetail/:id" element={<MoreDetail />} />
     </Routes>
   </BrowserRouter>
 
