@@ -15,7 +15,7 @@ export default function Place() {
       if(city=='all'){
          item = PlaceJson.map(((w)=> {
           return(
-            <div className="card">
+            <div className="card w-72">
                   <div className="image overflow-hidden rounded-md ">
                     <img src={`${w.imageone}`} alt="" className='w-72 h-72 hover:scale-125 transition-all duration-700 '/>
                   </div>
@@ -28,7 +28,7 @@ export default function Place() {
       }else{
         item = PlaceJson.filter(name=>name.city==city).map(((w)=> {
           return(
-            <div className="card">
+            <div className="card w-72">
                   <div className="image overflow-hidden rounded-md ">
                     <img src={`${w.imageone}`} alt="" className='w-72 h-72 hover:scale-125 transition-all duration-700 '/>
                   </div>
@@ -44,7 +44,7 @@ export default function Place() {
       if(place=='all'){
         item = PlaceJson.map(((w)=> {
           return(
-            <div className="card">
+            <div className="card w-72">
                   <div className="image overflow-hidden rounded-md ">
                     <img src={`${w.imageone}`} alt="" className='w-72 h-72 hover:scale-125 transition-all duration-700 '/>
                   </div>
@@ -57,7 +57,7 @@ export default function Place() {
       }else{
         item = PlaceJson.filter(name=>name.category==place).map(((w)=> {
           return(
-            <div className="card">
+            <div className="card w-72">
                   <div className="image overflow-hidden rounded-md ">
                     <img src={`${w.imageone}`} alt="" className='w-72 h-72 hover:scale-125 transition-all duration-700 '/>
                   </div>
@@ -73,7 +73,7 @@ export default function Place() {
     }else{
       item = PlaceJson.filter(name=>name.city==city).filter(name=>name.category==place).map(((w)=> {
         return(
-          <div className="card">
+          <div className="card w-72">
                 <div className="image overflow-hidden rounded-md ">
                   <img src={`${w.imageone}`} alt="" className='w-72 h-72 hover:scale-125 transition-all duration-700 '/>
                 </div>
@@ -97,10 +97,10 @@ export default function Place() {
   return (
     <Fragment>
         <Header />
-        <div className="flex">
+        <div className="flex justify-center">
 
         
-        <div className="fiter w-72 min-h-[85vh] overflow-hidden">
+        <div className="fiter hidden md:block w-72 min-h-[85vh] overflow-hidden">
           <div className="filterakan border mt-3 ml-5 text-green-600">
             <p className='py-4 text-center text-xl text-green-600 border-b'>Filter</p>
 
@@ -129,8 +129,8 @@ export default function Place() {
 
         </div>
 
-        <div className="ml-8 mt-3"> 
-          <div className="hamukartakan grid grid-cols-3 gap-10">
+        <div className="md:ml-8 mt-3"> 
+          <div className="hamukartakan grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:gap-10 md:gap-6 gap-5 items-center justify-end">
 {item}
           </div>
         </div>

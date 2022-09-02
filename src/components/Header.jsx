@@ -2,14 +2,17 @@ import * as React from 'react';
 import { Fragment } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import { useSelector, useDispatch } from 'react-redux'
+import {changeRoute} from '../app/Slice/nav'
 
 export default function TabPanel() {
+    const isactive = useSelector((state) => state.nav.nav)
+    const dispatch = useDispatch()
 
 const [show ,setShow]=useState(false)
-const [isactive ,setisactive]=useState('home')
+// const [isactive ,setisactive]=useState('home')
 function ChangeActive(name){
-    setisactive(name)
+    dispatch(changeRoute(name))
 }
 function ChangeShow(){
     setShow(!show)
