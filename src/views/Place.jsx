@@ -9,6 +9,7 @@ export default function Place() {
   let [city,setCity]=useState('all')
   var item ;
   items()
+  //slaw
   function items(){
     if(place=='all'){
       if(city=='all'){
