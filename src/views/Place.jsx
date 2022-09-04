@@ -3,12 +3,20 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react'
 import Header from '../components/Header'
 import PlaceJson from '../data/json.json'
+import { useSelector, useDispatch } from 'react-redux'
+import {changeRoute} from '../app/Slice/nav'
 
 export default function Place() {
   let [place,setPlace]=useState('all')
   let [city,setCity]=useState('all')
   var item ;
   items()
+
+  const isactive = useSelector((state) => state.nav.nav)
+    const dispatch = useDispatch()
+    function ChangeActive(name){
+      dispatch(changeRoute(name))
+  }
 
   function items(){
     if(place=='all'){
@@ -21,7 +29,7 @@ export default function Place() {
                   </div>
                   <div className="title text-center text-lg italic">{w.title}</div>
                   <div className="title py-2 text-md italic"><i class="ml-1 fa-solid fa-building text-sky-400"></i> {w.category} <i class="ml-2 fa-solid fa-location-dot text-sky-400"></i> {w.city}</div>
-                  <Link to={`/moredetail/${w.id}`}><div className="title cursor-pointer text-lg text-center border-none rounded-md text-white py-1 bg-blue-500 w-full italic">More Detail</div></Link>
+                  <Link to={`/moredetail/${w.id}`} onClick={()=>ChangeActive('Place')}><div className="title cursor-pointer text-lg text-center border-none rounded-md text-white py-1 bg-blue-500 w-full italic">More Detail</div></Link>
                 </div>
           )
         }))
@@ -34,7 +42,7 @@ export default function Place() {
                   </div>
                   <div className="title text-center text-lg italic">{w.title}</div>
                   <div className="title py-2 text-md italic"><i class="ml-1 fa-solid fa-building text-sky-400"></i> {w.category} <i class="ml-2 fa-solid fa-location-dot text-sky-400"></i> {w.city}</div>
-                  <Link to={`/moredetail/${w.id}`}><div className="title cursor-pointer text-lg text-center border-none rounded-md text-white py-1 bg-blue-500 w-full italic">More Detail</div></Link>
+                  <Link to={`/moredetail/${w.id}`} onClick={()=>ChangeActive('Place')}><div className="title cursor-pointer text-lg text-center border-none rounded-md text-white py-1 bg-blue-500 w-full italic">More Detail</div></Link>
                 </div>
           )
         }))
@@ -50,7 +58,7 @@ export default function Place() {
                   </div>
                   <div className="title text-center text-lg italic">{w.title}</div>
                   <div className="title py-2 text-md italic"><i class="ml-1 fa-solid fa-building text-sky-400"></i> {w.category} <i class="ml-2 fa-solid fa-location-dot text-sky-400"></i> {w.city}</div>
-                  <Link to={`/moredetail/${w.id}`}><div className="title cursor-pointer text-lg text-center border-none rounded-md text-white py-1 bg-blue-500 w-full italic">More Detail</div></Link>
+                  <Link to={`/moredetail/${w.id}`} onClick={()=>ChangeActive('Place')}><div className="title cursor-pointer text-lg text-center border-none rounded-md text-white py-1 bg-blue-500 w-full italic">More Detail</div></Link>
                 </div>
           )
         }))
@@ -63,7 +71,7 @@ export default function Place() {
                   </div>
                   <div className="title text-center text-lg italic">{w.title}</div>
                   <div className="title py-2 text-md italic"><i class="ml-1 fa-solid fa-building text-sky-400"></i> {w.category} <i class="ml-2 fa-solid fa-location-dot text-sky-400"></i> {w.city}</div>
-                  <Link to={`/moredetail/${w.id}`}><div className="title cursor-pointer text-lg text-center border-none rounded-md text-white py-1 bg-blue-500 w-full italic">More Detail</div></Link>
+                  <Link to={`/moredetail/${w.id}`} onClick={()=>ChangeActive('Place')}><div className="title cursor-pointer text-lg text-center border-none rounded-md text-white py-1 bg-blue-500 w-full italic">More Detail</div></Link>
                 </div>
           )
         }))
@@ -79,7 +87,7 @@ export default function Place() {
                 </div>
                 <div className="title text-center text-lg italic">{w.title}</div>
                 <div className="title py-2 text-md italic"><i class="ml-1 fa-solid fa-building text-sky-400"></i> {w.category} <i class="ml-2 fa-solid fa-location-dot text-sky-400"></i> {w.city}</div>
-                <Link to={`/moredetail/${w.id}`}><div className="title cursor-pointer text-lg text-center border-none rounded-md text-white py-1 bg-blue-500 w-full italic">More Detail</div></Link>
+                <Link to={`/moredetail/${w.id}`} onClick={()=>ChangeActive('Place')}><div className="title cursor-pointer text-lg text-center border-none rounded-md text-white py-1 bg-blue-500 w-full italic">More Detail</div></Link>
               </div>
         )
       }))
