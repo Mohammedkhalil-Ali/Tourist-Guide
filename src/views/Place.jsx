@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import { useState } from 'react'
 import Header from '../components/Header'
@@ -17,6 +17,9 @@ export default function Place() {
     function ChangeActive(name){
       dispatch(changeRoute(name))
   }
+  useEffect(()=>{
+    dispatch(changeRoute('Place'))
+  },[])
 
   function items(){
     if(place=='all'){

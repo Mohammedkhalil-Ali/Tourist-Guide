@@ -41,9 +41,9 @@ html,body{
 .hamburger-1 .line{
   width: 25px !important;
   height: 2px !important;
-  background-color: green !important;
+  background-color: white !important;
   display: block !important;
-  color: green !important;
+  color: white !important;
   margin-right: 10px !important;
   margin: 6px auto;   
 -webkit-transition: all 0.3s ease-in-out;
