@@ -3,7 +3,7 @@ import Header from '../components/Header'
 import Map from '../components/Map'
 
 
-//SLaw
+
 export default function About() {
 
   return (
