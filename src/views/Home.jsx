@@ -1,8 +1,19 @@
 import React, { Fragment } from 'react'
 import Header from '../components/Header'
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
+
+  const isAuth=useSelector((state) => state.login.isAuth)
+  const navigate=useNavigate()
+  
+  if(isAuth==false){
+    return (<div className='flex justify-center items-center h-screen w-screen'>
+      <p className='text-8xl text-sky-600' onClick={()=>{navigate('/login')}}>Sorry</p>
+      </div>)
+  }
   return (
     <Fragment>
         <Header />

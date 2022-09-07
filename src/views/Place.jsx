@@ -5,8 +5,12 @@ import Header from '../components/Header'
 import PlaceJson from '../data/json.json'
 import { useSelector, useDispatch } from 'react-redux'
 import {changeRoute} from '../app/Slice/nav'
+import { useNavigate } from 'react-router-dom';
 
 export default function Place() {
+  const isAuth=useSelector((state) => state.login.isAuth)
+  const navigate=useNavigate()
+  
   let [place,setPlace]=useState('all')
   let [city,setCity]=useState('all')
   var item ;
@@ -20,7 +24,11 @@ export default function Place() {
   useEffect(()=>{
     dispatch(changeRoute('Place'))
   },[])
-
+  if(isAuth==false){
+    return (<div className='flex justify-center items-center h-screen w-screen'>
+      <p className='text-8xl text-sky-600' onClick={()=>{navigate('/login')}}>Sorry</p>
+      </div>)
+  }
   function items(){
     if(place=='all'){
       if(city=='all'){

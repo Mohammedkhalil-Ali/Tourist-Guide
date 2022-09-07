@@ -7,14 +7,24 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 import { useSelector, useDispatch } from 'react-redux'
 import {changeRoute} from '../app/Slice/nav'
+import { useNavigate } from 'react-router-dom';
+
 
 export default function MoreDetail() {
+  const isAuth=useSelector((state) => state.login.isAuth)
+  const navigate=useNavigate()
+  
   const { id } = useParams();
 
     const dispatch = useDispatch()
   useEffect(()=>{
     dispatch(changeRoute('Place'))
   },[])
+  if(isAuth==false){
+    return (<div className='flex justify-center items-center h-screen w-screen'>
+      <p className='text-8xl text-sky-600' onClick={()=>{navigate('/login')}}>Sorry</p>
+      </div>)
+  }
   const item=PlaceJson.filter(n=>n.id==id).map(n=>{
     if(n.category=='hotel' || n.category=='motel'){
       return(

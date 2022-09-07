@@ -9,8 +9,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Service
 - About
 - Login
-- Lignup
-- ( maybe i add another page in future )
+- Signup
+- ( maybe I add another page in future )
 
 # Componnents
 
@@ -21,13 +21,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 # Libraries
 
 - Tailwind
-- Headless
-- MUI
+- Headless ( maybe )
+- MUI ( maybe )
 - React Router
 - Redux
 - AOS
 - Swiper js ( maybe )
 - google-map-react ( maybe )
+- Yup
 
 # API
 

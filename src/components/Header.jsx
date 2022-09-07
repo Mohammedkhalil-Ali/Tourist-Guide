@@ -4,15 +4,25 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
 import {changeRoute} from '../app/Slice/nav'
+import { logout } from '../app/Slice/login';
+import { useNavigate } from 'react-router-dom';
+
 
 export default function TabPanel() {
     const isactive = useSelector((state) => state.nav.nav)
     const dispatch = useDispatch()
+    const username=JSON.parse(localStorage.getItem('username'))
+    const navigate=useNavigate()
 
 const [show ,setShow]=useState(false)
+
 // const [isactive ,setisactive]=useState('home')
 function ChangeActive(name){
     dispatch(changeRoute(name))
+}
+function Logout(){
+    dispatch(logout)
+    navigate('/login')
 }
 function ChangeShow(){
     setShow(!show)
@@ -85,6 +95,10 @@ function ChangeShow(){
                         >About</Link>
 
         </nav>
+        <div className="image flex justify-end items-center mr-8 md:mr-0 md:ml-8">
+            <img src={`${username.UserImage}`} alt="" srcset="" className='w-12 lg:w-14 h-12 object-fill rounded-full ' /> 
+            <div className='md:ml-2 cursor-pointer text-lg' onClick={Logout}>Logout</div>
+        </div>
      {/* @click="show = !show" */}
             <div class="hamburger visible  lg:invisible pr-8" onClick={()=>{ChangeShow()}}>
                 <div className={`hamburger-1
