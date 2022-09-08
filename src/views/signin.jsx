@@ -12,6 +12,13 @@ import * as Yup from 'yup';
 export default function Signin() {
     const dispatch=useDispatch()
     const navigate=useNavigate()
+    // const fs = require('fs');
+    // fs.copyFile('C:\folderA\myfile.txt', 'C:\folderB\myfile.txt', (err) => {
+    //     if (err) throw err;
+    //     console.log('File was copied to destination');
+    //   });
+    var date = new Date();
+    var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate();
 
     // function checkUser(){
     //     for(let index=0;index<User.length;index++){
@@ -61,6 +68,8 @@ export default function Signin() {
                 "userName": `${values.username}`,
                 "email": `${values.email.toLowerCase()}`,
                 "password": `${values.password}`,
+                "point": 30,
+                "lasttime":current_date,
                 "UserImage": `https://i1.sndcdn.com/avatars-000255771415-dx5rag-t500x500.jpg`
             }
             Users.push(newuser)

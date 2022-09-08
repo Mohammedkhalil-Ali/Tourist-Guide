@@ -95,8 +95,8 @@ function ChangeShow(){
                         >About</Link>
 
         </nav>
-        <div className="image flex justify-end items-center mr-8 md:mr-0 md:ml-8">
-            <img src={`${username.UserImage}`} alt="" srcset="" className='w-12 lg:w-14 h-12 object-fill rounded-full ' /> 
+        <div className="image flex justify-end md:justify-start items-center  md:mr-0 md:ml-8">
+            <Link to='/profile' className='w-12 lg:w-12 h-12'><img src={`${username.UserImage}`} alt="" srcset="" className='w-12 lg:w-12 h-12 object-fill rounded-full ' /> </Link>
             <div className='md:ml-2 cursor-pointer text-lg' onClick={Logout}>Logout</div>
         </div>
      {/* @click="show = !show" */}

@@ -9,6 +9,9 @@ export default function Home() {
   const isAuth=useSelector((state) => state.login.isAuth)
   const navigate=useNavigate()
   
+  function gohome(){
+    navigate('/login')
+  }
   if(isAuth==false){
     return (<div className='flex justify-center items-center h-screen w-screen'>
       <p className='text-8xl text-sky-600' onClick={()=>{navigate('/login')}}>Sorry</p>

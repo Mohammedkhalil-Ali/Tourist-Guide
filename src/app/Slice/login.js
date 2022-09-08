@@ -7,6 +7,8 @@ export const LoginSlice = createSlice({
     username: '',
     email: '',
     image: '',
+    point: '',
+    lasttime: '',
     isAuth: ''
   },
   reducers: {
@@ -15,6 +17,8 @@ export const LoginSlice = createSlice({
       state.username = action.payload.username
       state.email = action.payload.email
       state.image = action.payload.image
+      state.point = action.payload.point
+      state.lasttime = action.payload.lasttime
       state.isAuth = true
       localStorage.setItem('username', JSON.stringify(action.payload))
     },
@@ -23,6 +27,8 @@ export const LoginSlice = createSlice({
         state.username = ''
         state.email = ''
         state.image = ''
+        state.point = ''
+        state.lasttime = ''
         state.isAuth = false
         localStorage.removeItem('username')
       }
