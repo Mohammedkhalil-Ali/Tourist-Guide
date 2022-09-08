@@ -7,7 +7,7 @@ export const LoginSlice = createSlice({
     username: '',
     email: '',
     image: '',
-    point: '',
+    point: 0,
     lasttime: '',
     isAuth: ''
   },
@@ -21,6 +21,12 @@ export const LoginSlice = createSlice({
       state.lasttime = action.payload.lasttime
       state.isAuth = true
       localStorage.setItem('username', JSON.stringify(action.payload))
+    },
+    pointKam:(state,action)=>{
+      state.point=state.point - action.payload
+    },
+    pointZyad:(state,action)=>{
+      state.point=state.point + 10
     },
     logout: (state, action) => {
         state.userid = ''
@@ -36,6 +42,6 @@ export const LoginSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { login,logout } = LoginSlice.actions
+export const { login,logout,pointKam,pointZyad } = LoginSlice.actions
 
 export default LoginSlice.reducer

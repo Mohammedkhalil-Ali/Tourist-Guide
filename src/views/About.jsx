@@ -1,18 +1,22 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import Header from '../components/Header'
 import Map from '../components/Map'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import {changeRoute} from '../app/Slice/nav'
 
 
 export default function About() {
 
   const isAuth=useSelector((state) => state.login.isAuth)
   const navigate=useNavigate()
-  
+  const dispatch=useDispatch()
+  useEffect(()=>{
+    dispatch(changeRoute('About'))
+  },[])
   if(isAuth==false){
     return (<div className='flex justify-center items-center h-screen w-screen'>
-      <p className='text-8xl text-sky-600' onClick={()=>{navigate('/login')}}>Sorry</p>
+      <p className='text-8xl text-sky-600' onClick={()=>{navigate('/login')}}>Sorry Not Authenticated Click Here</p>
       </div>)
   }
   return (

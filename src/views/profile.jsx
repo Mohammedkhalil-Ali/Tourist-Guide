@@ -3,8 +3,11 @@ import Header from '../components/Header'
 import User from '../data/user.json'
 import { useSelector,useDispatch } from 'react-redux';
 import {login} from '../app/Slice/login'
+import {pointZyad} from '../app/Slice/login'
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import {changeRoute} from '../app/Slice/nav'
 
 export default function Profile() {
     const dispatch = useDispatch();
@@ -16,8 +19,19 @@ export default function Profile() {
     // const k='2022-9-9'
     // var dat3=new Date(k)
     var dat4=new Date(current_date)
-    
+    const isAuth=useSelector((state) => state.login.isAuth)
+  const navigate=useNavigate()
 
+  useEffect(()=>{
+    dispatch(changeRoute('Profile'))
+  },[])
+
+  if(isAuth==false){
+    return (<div className='flex justify-center items-center h-screen w-screen'>
+      <p className='text-8xl text-sky-600' onClick={()=>{navigate('/login')}}>Sorry Not Authenticated Click Here</p>
+      </div>)
+  }
+  
     // if(dat4>dat3){
     //     return "dweneya";
     // }else if(dat3>dat4){
@@ -28,6 +42,7 @@ export default function Profile() {
         User[parseInt(username.id)-1].point=parseInt(username.point)+10
         setTime(true)
         dispatch(login(User[parseInt(username.id)-1]))
+        dispatch(pointZyad())
     }
   return (
     <Fragment>
@@ -35,7 +50,7 @@ export default function Profile() {
         <div className='h-[85vh] block md:flex md:justify-start md:items-center'>
             <div className="image text-center">
                 <img src={`${username.UserImage}`} alt="" srcset="" className='w-40 md:w-80 h-40 md:h-80 m-auto mt-5 md:ml-4 rounded-full object-fill mb-4' />
-                Update Profile
+           
             </div>
             <div className="zanyaryakan md:ml-32 text-center md:text-left mt-2">
                 <div className='text-2xl font-thin italic'>Name : {username.userName}</div> 

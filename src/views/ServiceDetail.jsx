@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, {useEffect, useState} from 'react'
 import { useParams } from "react-router-dom";
 import PlaceJson from '../data/json.json'
 import User from '../data/user.json'
@@ -8,24 +8,34 @@ import { Fragment } from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import { useSelector, useDispatch } from 'react-redux'
-import {changeRoute} from '../app/Slice/nav'
+import {pointKam} from '../app/Slice/login'
 import { useNavigate } from 'react-router-dom';
-import {login} from '../app/Slice/login'
-import { useState } from 'react';
-
+import {changeRoute} from '../app/Slice/nav'
 
 export default function ServiceDetail() {
-  const isAuth=useSelector((state) => state.login.isAuth)
-  const navigate=useNavigate()
+    const isAuth=useSelector((state) => state.login.isAuth)
+    const navigate=useNavigate()
+    
+    
+  const pointUser=useSelector((state) => state.login.point)
+
   const [showmodal,setModal]=useState(false)
   const [showmodalKrdra,setModalKrdra]=useState(false)
   const username=JSON.parse(localStorage.getItem('username'));
   var { id } = useParams();
   var dt = new Date();
+  const dispatch = useDispatch()
   dt.setDate(dt.getDate());
   var dtfive = new Date();
   dtfive.setDate(dtfive.getDate()+5);
-
+  useEffect(()=>{
+    dispatch(changeRoute('Service'))
+  },[])
+  if(isAuth==false){
+    return (<div className='flex justify-center items-center h-screen w-screen'>
+      <p className='text-8xl text-sky-600' onClick={()=>{navigate('/login')}}>Sorry Not Authenticated Click Here</p>
+      </div>)
+  }
   function removeModal(){
     setModal(false)
   }
@@ -33,31 +43,24 @@ export default function ServiceDetail() {
     setModalKrdra(false)
   }
     function buyOffer(){
-        if(parseInt(username.point)>=100){
+        if(pointUser>=100){
             const datanwe={
                 userid:parseInt(username.id),
                 serviceid:id,
                 katyKrdraw:dt,
                 katyBasarchun:dtfive
             }
-            User[parseInt(username.id)-1].point=parseInt(username.point)-100
-            dispatch(login(User[parseInt(username.id)-1]))
-            localStorage.setItem('username',User[parseInt(username.id)-1])
+            User[parseInt(username.id)-1].point=pointUser-100
             Krdrawakan.push(datanwe)
             setModalKrdra(true)
+            dispatch(pointKam(100))
         }else{
             setModal(true)
         }
     }
-    const dispatch = useDispatch()
-  useEffect(()=>{
-    dispatch(changeRoute('Service'))
-  },[])
-  if(isAuth==false){
-    return (<div className='flex justify-center items-center h-screen w-screen'>
-      <p className='text-8xl text-sky-600' onClick={()=>{navigate('/login')}}>Sorry</p>
-      </div>)
-  }
+  
+
+  
   const item=PlaceJson.filter(n=>n.id==id).map(n=>{
     if(n.category=='hotel' || n.category=='motel'){
       return(

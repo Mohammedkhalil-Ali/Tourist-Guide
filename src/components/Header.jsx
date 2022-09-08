@@ -42,10 +42,10 @@ function ChangeShow(){
                         p-[20px]
                         hover:bg-green-500
                         cursor-pointer
-                        ${isactive=='home'?'text-teal-200':''}
+                        ${isactive=='Home'?'text-teal-200':''}
                             `}
                         id="home"
-                        onClick={()=>ChangeActive('home')}
+                        onClick={()=>ChangeActive('Home')}
                         // @click="isactiveRoute('home')"
                         >Home</Link>
             <Link to='/place'   className={`hidden
@@ -87,9 +87,9 @@ function ChangeShow(){
                         p-[20px]
                         hover:bg-green-500
                         cursor-pointer
-                        ${isactive=='about'?'text-teal-200':''}
+                        ${isactive=='About'?'text-teal-200':''}
                             `}
-                        onClick={()=>ChangeActive('about')}
+                        onClick={()=>ChangeActive('About')}
                         // :class="isactive=='about'?'text-teal-200':''"
                         // @click="isactiveRoute('about')"
                         >About</Link>
@@ -128,9 +128,9 @@ function ChangeShow(){
                         cursor-pointer
                         py-4
                         px-8
-                        ${isactive=='home'?'text-teal-200':''}
+                        ${isactive=='Home'?'text-teal-200':''}
                         `}
-                        onClick={()=>ChangeActive('home')}>
+                        onClick={()=>ChangeActive('Home')}>
             Home
                         </p></Link>
                         <Link to='/place'  
@@ -166,9 +166,9 @@ function ChangeShow(){
                              cursor-pointer
                              py-4
                              px-8
-                             ${isactive=='about'?'text-teal-200':''}
+                             ${isactive=='About'?'text-teal-200':''}
                              `}
-                             onClick={()=>ChangeActive('about')}>
+                             onClick={()=>ChangeActive('About')}>
             About</p></Link>
         </nav>
 

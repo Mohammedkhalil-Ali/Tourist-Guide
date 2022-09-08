@@ -1,8 +1,25 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import Header from '../components/Header'
 import Services from '../data/service.json'
 import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import {changeRoute} from '../app/Slice/nav'
+
+
 export default function Service() {
+  const isAuth=useSelector((state) => state.login.isAuth)
+  const navigate=useNavigate()
+  const dispatch=useDispatch()
+  useEffect(()=>{
+    dispatch(changeRoute('Service'))
+  },[])
+  if(isAuth==false){
+    return (<div className='flex justify-center items-center h-screen w-screen'>
+      <p className='text-8xl text-sky-600' onClick={()=>{navigate('/login')}}>Sorry Not Authenticated Click Here</p>
+      </div>)
+  }
+  
   const item = Services.map(((w)=> {
     return(
       <div className="card w-72">
