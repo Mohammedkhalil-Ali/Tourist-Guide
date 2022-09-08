@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import User from '../data/user.json'
 import { useSelector,useDispatch } from 'react-redux';
 import {login} from '../app/Slice/login'
+import { Link } from 'react-router-dom';
 
 export default function Login() {
     const dispatch=useDispatch()
@@ -36,6 +37,7 @@ export default function Login() {
                 <input type="text" className='w-full h-9 px-3 bg-white rounded-md my-1 outline-none border-none' placeholder='Email' onChange={loginData} name="email"/>
                 <input type="text" className='w-full h-9 px-3 bg-white rounded-md my-1 outline-none border-none' placeholder='Password' onChange={loginData} name="password"/>
                 <div className="butn w-full cursor-pointer bg-green-500 hover:bg-green-600 transition-all duration-300 flex items-center justify-center py-2 mt-2 text-white text-center h-10 rounded-md" onClick={checkUser}>Login</div>
+                <Link to='/signin'><p className='text-center mt-2 text-blue-700' >Sign Up</p></Link>
             </div>
         </div>
     </Fragment>

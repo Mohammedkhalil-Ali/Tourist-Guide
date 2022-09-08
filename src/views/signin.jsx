@@ -1,7 +1,7 @@
 
 import React, { Fragment } from 'react'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Users from '../data/user.json'
 import { useDispatch } from 'react-redux';
 import {login} from '../app/Slice/login'
@@ -111,6 +111,7 @@ export default function Signin() {
                             <p className="text-red-800 p-1 drop-shadow-lg"> {formik.errors.confirmPassword}</p>
                         ) : null}
                 <button type='submit' className="butn w-full cursor-pointer bg-green-500 hover:bg-green-600 transition-all duration-300 flex items-center justify-center py-2 mt-2 text-white text-center h-10 rounded-md" >Sign In</button>
+            <Link to='/signin'><p className='text-center mt-2 text-blue-700' >Sign In</p></Link>
             </form>
         </div>
     </Fragment>
