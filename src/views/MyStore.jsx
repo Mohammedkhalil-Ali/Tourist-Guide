@@ -5,6 +5,8 @@ import { changeRoute } from '../app/Slice/nav'
 import Data from '../data/krdrawakan.json'
 import Place from '../data/json.json'
 import Header from '../components/Header'
+import User from '../data/user.json'
+import {login} from '../app/Slice/login'
 
 export default function MyStore() {
     const username=JSON.parse(localStorage.getItem('username'));
@@ -14,11 +16,10 @@ export default function MyStore() {
     const dispatch = useDispatch()
   useEffect(()=>{
     dispatch(changeRoute('Store'))
+    dispatch(login(User[parseInt(username.id)-1]))
   },[])
-  if(isAuth==false){
-    return (<div className='flex justify-center items-center h-screen w-screen'>
-      <p className='text-8xl text-sky-600' onClick={()=>{navigate('/login')}}>Sorry</p>
-      </div>)
+  if(isAuth==false || localStorage.getItem('isAuthed')!=='true'){
+    return navigate('/login')
   }
   var item=Data.filter((m)=>m.userid==username.id).map(l=>{
     var dt = new Date(l.katyKrdraw);

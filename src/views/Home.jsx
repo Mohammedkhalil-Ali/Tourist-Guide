@@ -4,19 +4,21 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import {changeRoute} from '../app/Slice/nav'
+import User from '../data/user.json'
+import {login} from '../app/Slice/login'
 
 export default function Home() {
 
+  const username=JSON.parse(localStorage.getItem('username'));
   const navigate=useNavigate()
   const isAuth=useSelector((state) => state.login.isAuth)
   const dispatch=useDispatch()
   useEffect(()=>{
     dispatch(changeRoute('Home'))
-  },[])
-  if(isAuth==false){
-    return (<div className='flex justify-center items-center h-screen w-screen'>
-      <p className='text-8xl text-sky-600' onClick={()=>{navigate('/login')}}>Sorry</p>
-      </div>)
+    dispatch(login(User[parseInt(username.id)-1]))
+  })
+  if(isAuth==false || localStorage.getItem('isAuthed')!=='true'){
+    return navigate('/login')
   }
   return (
     <Fragment>

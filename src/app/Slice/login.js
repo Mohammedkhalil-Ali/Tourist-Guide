@@ -21,6 +21,7 @@ export const LoginSlice = createSlice({
       state.lasttime = action.payload.lasttime
       state.isAuth = true
       localStorage.setItem('username', JSON.stringify(action.payload))
+      localStorage.setItem('isAuthed', JSON.stringify(true))
     },
     pointKam:(state,action)=>{
       state.point=state.point - action.payload
@@ -37,6 +38,7 @@ export const LoginSlice = createSlice({
         state.lasttime = ''
         state.isAuth = false
         localStorage.removeItem('username')
+        localStorage.removeItem('isAuthed')
       }
   },
 })

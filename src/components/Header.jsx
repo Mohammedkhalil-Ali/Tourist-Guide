@@ -21,7 +21,7 @@ function ChangeActive(name){
     dispatch(changeRoute(name))
 }
 function Logout(){
-    dispatch(logout)
+    dispatch(logout())
     navigate('/login')
 }
 function ChangeShow(){

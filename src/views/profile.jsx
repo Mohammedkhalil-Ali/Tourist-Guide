@@ -24,12 +24,11 @@ export default function Profile() {
 
   useEffect(()=>{
     dispatch(changeRoute('Profile'))
+    dispatch(login(User[parseInt(username.id)-1]))
   },[])
 
-  if(isAuth==false){
-    return (<div className='flex justify-center items-center h-screen w-screen'>
-      <p className='text-8xl text-sky-600' onClick={()=>{navigate('/login')}}>Sorry Not Authenticated Click Here</p>
-      </div>)
+  if(isAuth==false || localStorage.getItem('isAuthed')!=='true'){
+    return navigate('/login')
   }
   
     // if(dat4>dat3){

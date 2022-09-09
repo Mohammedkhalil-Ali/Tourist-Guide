@@ -6,8 +6,11 @@ import PlaceJson from '../data/json.json'
 import { useSelector, useDispatch } from 'react-redux'
 import {changeRoute} from '../app/Slice/nav'
 import { useNavigate } from 'react-router-dom';
+import User from '../data/user.json'
+import {login} from '../app/Slice/login'
 
 export default function Place() {
+  const username=JSON.parse(localStorage.getItem('username'));
   const isAuth=useSelector((state) => state.login.isAuth)
   const navigate=useNavigate()
   const [filt,setFilt]=useState(false)
@@ -23,11 +26,10 @@ export default function Place() {
   }
   useEffect(()=>{
     dispatch(changeRoute('Place'))
+    dispatch(login(User[parseInt(username.id)-1]))
   },[])
-  if(isAuth==false){
-    return (<div className='flex justify-center items-center h-screen w-screen'>
-      <p className='text-8xl text-sky-600' onClick={()=>{navigate('/login')}}>Sorry</p>
-      </div>)
+  if(isAuth==false || localStorage.getItem('isAuthed')!=='true'){
+    return navigate('/login')
   }
   function items(){
     if(place=='all'){

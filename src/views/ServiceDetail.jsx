@@ -12,8 +12,10 @@ import {pointKam} from '../app/Slice/login'
 import { useNavigate } from 'react-router-dom';
 import {changeRoute} from '../app/Slice/nav'
 import { Link } from 'react-router-dom';
+import {login} from '../app/Slice/login'
 
 export default function ServiceDetail() {
+  const username=JSON.parse(localStorage.getItem('username'));
     const isAuth=useSelector((state) => state.login.isAuth)
     const navigate=useNavigate()
     
@@ -22,17 +24,15 @@ export default function ServiceDetail() {
 
   const [showmodal,setModal]=useState(false)
   const [showmodalKrdra,setModalKrdra]=useState(false)
-  const username=JSON.parse(localStorage.getItem('username'));
   var { id } = useParams();
   const dispatch = useDispatch()
   
   useEffect(()=>{
     dispatch(changeRoute('Service'))
+    dispatch(login(User[parseInt(username.id)-1]))
   },[])
-  if(isAuth==false){
-    return (<div className='flex justify-center items-center h-screen w-screen'>
-      <p className='text-8xl text-sky-600' onClick={()=>{navigate('/login')}}>Sorry Not Authenticated Click Here</p>
-      </div>)
+  if(isAuth==false || localStorage.getItem('isAuthed')!=='true'){
+    return navigate('/login')
   }
   function removeModal(){
     setModal(false)
