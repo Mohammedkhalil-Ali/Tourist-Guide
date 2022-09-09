@@ -34,6 +34,7 @@ export default function Login() {
     <Fragment>
         <div className='w-full h-screen flex justify-center items-center bg-slate-50'>
             <div className="bg-green-200 w-80 px-2 py-4 rounded-md">
+            {error?<p className='text-red-500 text-center'>Email Or Password Are wrong</p>:''}         
                 <input type="text" className='w-full h-9 px-3 bg-white rounded-md my-1 outline-none border-none' placeholder='Email' onChange={loginData} name="email"/>
                 <input type="text" className='w-full h-9 px-3 bg-white rounded-md my-1 outline-none border-none' placeholder='Password' onChange={loginData} name="password"/>
                 <div className="butn w-full cursor-pointer bg-green-500 hover:bg-green-600 transition-all duration-300 flex items-center justify-center py-2 mt-2 text-white text-center h-10 rounded-md" onClick={checkUser}>Login</div>

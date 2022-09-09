@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 export default function Place() {
   const isAuth=useSelector((state) => state.login.isAuth)
   const navigate=useNavigate()
-  
+  const [filt,setFilt]=useState(false)
   let [place,setPlace]=useState('all')
   let [city,setCity]=useState('all')
   var item ;
@@ -112,17 +112,22 @@ export default function Place() {
     setCity(name)
     items()
   }
+ 
+  function changeFilter(){
+    setFilt(!filt)
+  }
 
   return (
     <Fragment>
         <Header />
-        <div className="flex justify-center">
+        <div className="block m-auto md:flex md:justify-center">
 
         
-        <div className="fiter hidden md:block w-72 min-h-[85vh] overflow-hidden">
-          <div className="filterakan border mt-3 ml-5 text-green-600">
-            <p className='py-4 text-center text-xl text-green-600 border-b'>Filter</p>
+        <div className="fiter m-auto md:m-0 md:block w-72 md:min-h-[85vh] overflow-hidden">
+          <div className="filterakan border mt-3 md:ml-5 text-green-600">
+            <p className='py-4 text-center text-xl text-green-600 border-b' onClick={changeFilter}>Filter <i class="fa-solid fa-angle-up ml-2 md:hidden"></i></p>
 
+            <div className={`${filt ? 'h-fit md:min-h-[65vh]':'h-0  md:min-h-[65vh]'}  transition-all duration-1000` }>
             <div className=' w-72 '>
               <div className='ml-5 py-4'>
                 <p className='mx-4 text-xl pb-1'>Places</p>
@@ -143,12 +148,13 @@ export default function Place() {
                 <div className='flex items-center text-md py-1 cursor-pointer' onClick={()=>changecity('duhok')}><div className={`mx-4 w-3 h-3  border border-green-600 ${city=='duhok'?'bg-green-600':'bg-white'}`}></div> Duhok </div>
               </div>
             </div>
+            </div>
             
           </div>
 
         </div>
 
-        <div className="md:ml-8 mt-3"> 
+        <div className="md:ml-8 mt-3 flex justify-center"> 
           <div className="hamukartakan grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:gap-10 md:gap-6 gap-5 items-center justify-end">
 {item}
           </div>

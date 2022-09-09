@@ -4,6 +4,7 @@ import Map from '../components/Map'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import {changeRoute} from '../app/Slice/nav'
+import Foot from '../components/Footer'
 
 
 export default function About() {
@@ -22,7 +23,7 @@ export default function About() {
   return (
     <Fragment>
         <Header />
-        <div className='block m-auto md:m-0 md:flex h-[85vh] md:justify-evenly md:items-center'>
+        <div className='block m-auto md:m-0 md:flex h-[80vh] md:justify-evenly md:items-center'>
         <div className="datakan md:ml-8">
           <p className='text-4xl text-center md:text-left font-thin text-green-500 mt-10'>Tourist Guide</p><br />
           <p className='text-2xl text-center md:text-left  font-thin text-slate-400 mt-4 w-[100%] md:w-[70%]'>In our Website you maght now about alot of hotel  motel places and malls, click here to know
@@ -40,6 +41,9 @@ export default function About() {
 <Map />
           </div>
         </div>
+          <footer className='h-[10vh]'>
+            <Foot />
+          </footer>
     </Fragment>
   )
 }
