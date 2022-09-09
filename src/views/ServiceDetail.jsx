@@ -11,6 +11,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import {pointKam} from '../app/Slice/login'
 import { useNavigate } from 'react-router-dom';
 import {changeRoute} from '../app/Slice/nav'
+import { Link } from 'react-router-dom';
 
 export default function ServiceDetail() {
     const isAuth=useSelector((state) => state.login.isAuth)
@@ -23,11 +24,8 @@ export default function ServiceDetail() {
   const [showmodalKrdra,setModalKrdra]=useState(false)
   const username=JSON.parse(localStorage.getItem('username'));
   var { id } = useParams();
-  var dt = new Date();
   const dispatch = useDispatch()
-  dt.setDate(dt.getDate());
-  var dtfive = new Date();
-  dtfive.setDate(dtfive.getDate()+5);
+  
   useEffect(()=>{
     dispatch(changeRoute('Service'))
   },[])
@@ -42,13 +40,26 @@ export default function ServiceDetail() {
   function removeModalKrdrawak(){
     setModalKrdra(false)
   }
-    function buyOffer(){
+    var buyOffer =(event,ntitle,nimageone,ncity,nprice,ndashkandn,category)=>{
+      var dt = new Date();
+      dt.setDate(dt.getDate());
+      let text1 = dt.toString();
+      var dtfive = new Date();
+      dtfive.setDate(dtfive.getDate()+5);
+      let text2 = dtfive.toString();
+      alert(dt)
+      alert(dtfive)
         if(pointUser>=100){
             const datanwe={
                 userid:parseInt(username.id),
-                serviceid:id,
-                katyKrdraw:dt,
-                katyBasarchun:dtfive
+                title:ntitle,
+                imageone:nimageone,
+                city:ncity,
+                price:nprice,
+                dashkandn:ndashkandn,
+                category:category,
+                katyKrdraw:text1,
+                katyBasarchun:text2
             }
             User[parseInt(username.id)-1].point=pointUser-100
             Krdrawakan.push(datanwe)
@@ -109,7 +120,8 @@ export default function ServiceDetail() {
               <div className="price text-xl font-thin py-1 ml-[10%] md:ml-0">Price : {n.price}</div>
               <div className="place text-xl font-thin py-1 ml-[10%] md:ml-0">Place : {n.city}</div>
               <div className="phone text-xl font-thin py-1 ml-[10%] md:ml-0">Phone : {n.phone}</div>
-              <div className="phone bg-blue-600 w-60 text-white text-center rounded-md mt-4 cursor-pointer text-xl font-thin py-1 ml-[10%] md:ml-0" onClick={buyOffer}>Buy Offer 100 Point</div>
+              <div className="phone bg-blue-600 w-60 text-white text-center rounded-md mt-4 cursor-pointer text-xl font-thin py-1 ml-[10%] md:ml-0" onClick={event=>buyOffer(event,n.title,n.imageone,n.city,n.price,n.dashkandn,n.category)}>Buy Offer 100 Point</div>
+              <Link to='/Service'><p className='text-2xl italic text-center ml-[10%] md:ml-0 md:text-left py-5 flex items-center text-gray-500'>Back <i class="fa-solid fa-backward mt-2 ml-4"></i></p></Link>
   
           </div>
           </Fragment>
@@ -160,7 +172,9 @@ export default function ServiceDetail() {
               <div className="detail w-[70%] text-xl py-2 font-thin">{n.detail}
               </div>
               <div className="place text-xl font-thin py-1">Place : {n.city}</div>
-              <div className="phone bg-blue-600 w-60 text-white text-center rounded-md mt-4 cursor-pointer text-xl font-thin py-1 ml-[10%] md:ml-0" onClick={buyOffer}>Buy Offer 100 Point</div>
+              <div className="phone bg-blue-600 w-60 text-white text-center rounded-md mt-4 cursor-pointer text-xl font-thin py-1 ml-[10%] md:ml-0" onClick={event=>buyOffer(event,n.title,n.imageone,n.city,n.price,n.dashkandn,n.category)}>Buy Offer 100 Point</div>
+              <Link to='/Service'><p className='text-2xl italic text-center ml-[10%] md:ml-0 md:text-left py-5 flex items-center text-gray-500'>Back <i class="fa-solid fa-backward mt-2 ml-4"></i></p></Link>
+
 
   
           </div>

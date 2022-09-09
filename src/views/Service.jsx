@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect } from 'react'
 import Header from '../components/Header'
-import Services from '../data/service.json'
+import Services from '../data/json.json'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -21,6 +21,7 @@ export default function Service() {
   }
   
   const item = Services.map(((w)=> {
+    if(w.dashkandn){
     return(
       <div className="card w-72">
             <div className="image overflow-hidden rounded-md relative">
@@ -32,6 +33,7 @@ export default function Service() {
            <Link to={`/servicedetail/${w.id}`} ><div className="title cursor-pointer text-lg text-center border-none rounded-md text-white py-1 bg-blue-500 w-full italic">More Detail</div></Link>
           </div>
     )
+  }
   }))
   return (
     <Fragment>

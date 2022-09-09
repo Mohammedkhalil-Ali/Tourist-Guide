@@ -94,10 +94,26 @@ function ChangeShow(){
                         // @click="isactiveRoute('about')"
                         >About</Link>
 
+            <Link to='/store'   className={`
+                        hidden
+                        lg:inline
+                        lg:px-10
+                        xl:px-16
+                        h-[10vh]
+                        p-[20px]
+                        hover:bg-green-500
+                        cursor-pointer
+                        ${isactive=='Store'?'text-teal-200':''}
+                            `}
+                        onClick={()=>ChangeActive('Store')}
+                        // :class="isactive=='about'?'text-teal-200':''"
+                        // @click="isactiveRoute('about')"
+                        >Store</Link>
+
         </nav>
-        <div className="image flex justify-end md:justify-start items-center  md:mr-0 md:ml-8">
+        <div className="image flex justify-end md:justify-start items-center mr-4  md:mr-0 md:ml-8">
             <Link to='/profile' className='w-12 lg:w-12 h-12'><img src={`${username.UserImage}`} alt="" srcset="" className='w-12 lg:w-12 h-12 object-fill rounded-full ' /> </Link>
-            <div className='md:ml-2 cursor-pointer text-lg' onClick={Logout}>Logout</div>
+            <div className='ml-2 cursor-pointer text-lg' onClick={Logout}>Logout</div>
         </div>
      {/* @click="show = !show" */}
             <div class="hamburger visible  lg:invisible pr-8" onClick={()=>{ChangeShow()}}>
@@ -170,6 +186,18 @@ function ChangeShow(){
                              `}
                              onClick={()=>ChangeActive('About')}>
             About</p></Link>
+
+            <Link to='/store' >
+                        <p
+                         className={`
+                         hover:bg-green-500
+                             cursor-pointer
+                             py-4
+                             px-8
+                             ${isactive=='Store'?'text-teal-200':''}
+                             `}
+                             onClick={()=>ChangeActive('Store')}>
+            Store</p></Link>
         </nav>
 
     </Fragment>

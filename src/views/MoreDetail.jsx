@@ -8,6 +8,7 @@ import { Carousel } from 'react-responsive-carousel';
 import { useSelector, useDispatch } from 'react-redux'
 import {changeRoute} from '../app/Slice/nav'
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 export default function MoreDetail() {
@@ -55,13 +56,14 @@ export default function MoreDetail() {
   
           </div>
   <div className="datakan md:ml-32 md:mb-16 py-10 mt-10">
-              <div className='text-5xl italic text-center md:text-left py-5'>{n.title}</div>
+              <div className='text-5xl italic text-center md:text-left py-5  items-center'><p>{n.title}</p></div>
               <div className="detail  ml-[10%] md:ml-0 w-[60%] md:w-[70%] text-xl py-2 font-thin text-left md:text-left">{n.detail}
               </div>
               <div className="asterra text-xl font-thin py-1 ml-[10%] md:ml-0">Star : {n.star}</div>
               <div className="price text-xl font-thin py-1 ml-[10%] md:ml-0">Price : {n.price}</div>
               <div className="place text-xl font-thin py-1 ml-[10%] md:ml-0">Place : {n.city}</div>
               <div className="phone text-xl font-thin py-1 ml-[10%] md:ml-0">Phone : {n.phone}</div>
+              <Link to='/Place'><p className='text-2xl italic text-center ml-[10%] md:ml-0 md:text-left py-5 flex items-center text-gray-500'>Back <i class="fa-solid fa-backward mt-2 ml-4"></i></p></Link>
   
           </div>
           </Fragment>
@@ -100,6 +102,7 @@ export default function MoreDetail() {
               <div className="detail w-[70%] text-xl py-2 font-thin">{n.detail}
               </div>
               <div className="place text-xl font-thin py-1">Place : {n.city}</div>
+              <Link to='/Place'><p className='text-2xl italic text-center ml-[10%] md:ml-0 md:text-left py-5 flex items-center text-gray-500'>Back <i class="fa-solid fa-backward mt-2 ml-4"></i></p></Link>
   
           </div>
           </Fragment>

@@ -13,6 +13,7 @@ import Login from '../views/Login'
 import SignIn from '../views/signin'
 import Profile from '../views/profile'
 import ServiceDetail from '../views/ServiceDetail'
+import Store from '../views/MyStore'
 // import your route components too
 
 export default function router() {
@@ -31,6 +32,7 @@ export default function router() {
       <Route path="/moredetail/:id" element={<MoreDetail />} />
       <Route path="/signin" element={<SignIn />} />
       <Route path="/servicedetail/:id" element={<ServiceDetail />} />
+      <Route path="/store" element={<Store />} />
 
     </Routes>
   </BrowserRouter>

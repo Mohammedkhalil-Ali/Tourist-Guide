@@ -10,6 +10,7 @@
         "city":"Sulemani",
         "price":"200000",
         "star":"5",
+        "dashkandn":"15",
         "title":"Grand Millennium Hotel Sulaimani",
         "detail":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis incidunt, nihil porro alias architecto asperiores!",
         "phone":"0750 113 1313"
@@ -25,6 +26,7 @@
         "city":"Sulemani",
         "price":"15000",
         "star":"3",
+        "dashkandn":"15",
         "title":"Baz Hotel",
         "detail":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis incidunt, nihil porro alias architecto asperiores!",
         "phone":"0750 173 9354"
@@ -50,6 +52,7 @@
         "imagethree":"https://www.visiterbil.com/wp-content/uploads/2017/08/majidimall6-1006x800.jpg",
         "imagefour":"https://www.ikidg.com/ikidg/storage/app/public/projects/July2020/QkrDGwKqNM9eOtDHiCzD-rail.jpg",
         "city":"Sulemani",
+        "dashkandn":"15",
         "title":"Majdi Mall",
         "detail":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis incidunt, nihil porro alias architecto asperiores!"
     },
@@ -72,6 +75,7 @@
         "id":"6",
         "category":"motel",
         "name":"Zamo",
+        "dashkandn":"15",
         "imageone":"https://scontent.fisu10-2.fna.fbcdn.net/v/t39.30808-6/279304269_280433564289846_1497730626526934493_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeFiYEcWdne4wEWhLJmZtx0L6W9O03--qBPpb07Tf76oE9jSeZx-fEj07nsAbVlEx3HllB4T6dKzhX4MdKffYQFq&_nc_ohc=oTaQkchVw8oAX8DFRgf&_nc_ht=scontent.fisu10-2.fna&oh=00_AT-6Ewa4QzbneLpWNAmIiKHElteyqrwFMHyP9Nm_CN0-4A&oe=631063AA",
         "imagetwo":"https://scontent.fisu10-2.fna.fbcdn.net/v/t39.30808-6/279421973_280433597623176_6019508392153680198_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeE05CK9SWuCbrVTU19jjXoBqzqMV1W2YXSrOoxXVbZhdPpcJC98cYaee0xNj0q4_R1gitkVaWx7vOwusOjao8t7&_nc_ohc=Ci7Yf2vnocAAX-q0h8Y&tn=IIOmgAa1rp-Itf-H&_nc_ht=scontent.fisu10-2.fna&oh=00_AT_eBDQ7dp57ywZIY_1HW-CB2zqEvXH5eFrrDdsRlSL0eQ&oe=6310BA52",
         "imagethree":"https://scontent.fisu10-2.fna.fbcdn.net/v/t39.30808-6/279298095_280433624289840_6664438018830932560_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeGbtEqj4oLKPPCi0Wa1MkNdXGvED7sEl7hca8QPuwSXuIEZseZ9W8yPIAJbo9f5N6mro8d-u5caXHVU3URpH8Dg&_nc_ohc=VrLcAyiwUaEAX_Uwq_G&tn=IIOmgAa1rp-Itf-H&_nc_ht=scontent.fisu10-2.fna&oh=00_AT-pPDgojOcvV7kUEawhR1Bh-_v_FmJCuxAges6_qsod_g&oe=630FE94B",
