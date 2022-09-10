@@ -14,6 +14,7 @@ import {changeRoute} from '../app/Slice/nav'
 import { Link } from 'react-router-dom';
 import {login} from '../app/Slice/login'
 import Swal from 'sweetalert2';
+import StarRatings from 'react-star-ratings';
 
 export default function ServiceDetail() {
   const username=JSON.parse(localStorage.getItem('username'));
@@ -106,7 +107,12 @@ export default function ServiceDetail() {
               <div className='text-5xl italic text-center md:text-left py-5'>{n.title}</div>
               <div className="detail  ml-[10%] md:ml-0 w-[60%] md:w-[70%] text-xl py-2 font-thin text-left md:text-left">{n.detail}
               </div>
-              <div className="asterra text-xl font-thin py-1 ml-[10%] md:ml-0">Star : {n.star}</div>
+              <div className="asterra text-xl font-thin py-1 ml-[10%] md:ml-0">Star : &nbsp; <StarRatings
+        rating={parseInt(n.star)}
+        starDimension="20px"
+        starSpacing="3px"
+        starRatedColor='yellow'
+      /> </div>
               <div className="price text-xl font-thin py-1 ml-[10%] md:ml-0">Price : {n.price}</div>
               <div className="place text-xl font-thin py-1 ml-[10%] md:ml-0">Place : {n.city}</div>
               <div className="phone text-xl font-thin py-1 ml-[10%] md:ml-0">Phone : {n.phone}</div>

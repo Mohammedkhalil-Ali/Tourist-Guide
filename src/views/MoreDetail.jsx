@@ -11,6 +11,7 @@ import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import User from '../data/user.json'
 import {login} from '../app/Slice/login'
+import StarRatings from 'react-star-ratings';
 
 
 export default function MoreDetail() {
@@ -61,7 +62,14 @@ export default function MoreDetail() {
               <div className='text-5xl italic text-center md:text-left py-5  items-center'><p>{n.title}</p></div>
               <div className="detail  ml-[10%] md:ml-0 w-[60%] md:w-[70%] text-xl py-2 font-thin text-left md:text-left">{n.detail}
               </div>
-              <div className="asterra text-xl font-thin py-1 ml-[10%] md:ml-0">Star : {n.star}</div>
+              <div className="asterra text-xl font-thin py-1 ml-[10%] md:ml-0">Star : &nbsp;
+              <StarRatings
+        rating={parseInt(n.star)}
+        starDimension="20px"
+        starSpacing="3px"
+        starRatedColor='yellow'
+      />
+              </div>
               <div className="price text-xl font-thin py-1 ml-[10%] md:ml-0">Price : {n.price}</div>
               <div className="place text-xl font-thin py-1 ml-[10%] md:ml-0">Place : {n.city}</div>
               <div className="phone text-xl font-thin py-1 ml-[10%] md:ml-0">Phone : {n.phone}</div>
