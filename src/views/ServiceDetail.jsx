@@ -13,6 +13,7 @@ import { useNavigate } from 'react-router-dom';
 import {changeRoute} from '../app/Slice/nav'
 import { Link } from 'react-router-dom';
 import {login} from '../app/Slice/login'
+import Swal from 'sweetalert2';
 
 export default function ServiceDetail() {
   const username=JSON.parse(localStorage.getItem('username'));
@@ -22,8 +23,6 @@ export default function ServiceDetail() {
     
   const pointUser=useSelector((state) => state.login.point)
 
-  const [showmodal,setModal]=useState(false)
-  const [showmodalKrdra,setModalKrdra]=useState(false)
   var { id } = useParams();
   const dispatch = useDispatch()
   
@@ -34,21 +33,15 @@ export default function ServiceDetail() {
   if(isAuth==false || localStorage.getItem('isAuthed')!=='true'){
     return navigate('/login')
   }
-  function removeModal(){
-    setModal(false)
-  }
-  function removeModalKrdrawak(){
-    setModalKrdra(false)
-  }
-    var buyOffer =(event,ntitle,nimageone,ncity,nprice,ndashkandn,category)=>{
+
+    var buyOffer =(ntitle,nimageone,ncity,nprice,ndashkandn,category)=>{
       var dt = new Date();
       dt.setDate(dt.getDate());
       let text1 = dt.toString();
       var dtfive = new Date();
       dtfive.setDate(dtfive.getDate()+5);
       let text2 = dtfive.toString();
-      alert(dt)
-      alert(dtfive)
+
         if(pointUser>=100){
             const datanwe={
                 userid:parseInt(username.id),
@@ -63,10 +56,18 @@ export default function ServiceDetail() {
             }
             User[parseInt(username.id)-1].point=pointUser-100
             Krdrawakan.push(datanwe)
-            setModalKrdra(true)
             dispatch(pointKam(100))
+            Swal.fire(
+              'Successfuly',
+              'Your service has been successfuly bought',
+              'success'
+            )
         }else{
-            setModal(true)
+          Swal.fire(
+            'Error!',
+            'Your point below 100 sorry',
+            'error'
+          )
         }
     }
   
@@ -76,17 +77,6 @@ export default function ServiceDetail() {
     if(n.category=='hotel' || n.category=='motel'){
       return(
         <Fragment>
-            {showmodal?<div className="modal fixed z-30 flex justify-center items-center bg-opacity-20 bg-black h-screen w-screen">
-                <div className='bg-green-400 p-4 text-white rounded-md'>
-                    <div className="remove flex justify-between"><p className='text-2xl'>Warning</p><i class="fa-solid fa-xmark text-red-600 text-4xl text-right cursor-pointer" onClick={removeModal}></i></div>
-                    <p>Doesn't Have enough Point to buy this offer</p>
-                </div>
-            </div>:''}
-            {showmodalKrdra?<div className="modal fixed z-30 flex justify-center items-center bg-opacity-20 bg-black h-screen w-screen">
-                <div className='bg-green-400 p-4 text-white w-80 rounded-md'>
-                    <div className="remove flex justify-between items-center"><p>Successfully you bought</p><i class="fa-solid fa-xmark text-red-600 text-4xl text-right cursor-pointer" onClick={removeModalKrdrawak}></i></div>
-                </div>
-            </div>:''}
         <div className="coursel  md:ml-5 rounded-md md:mb-24 mb-14">
             <Carousel className='md:w-[30vw] w-[80%] mx-[10%] mb-10 mt-5 h-[30vh] border-none hover:border-none rounded-md' 
               showArrows={false}
@@ -120,7 +110,25 @@ export default function ServiceDetail() {
               <div className="price text-xl font-thin py-1 ml-[10%] md:ml-0">Price : {n.price}</div>
               <div className="place text-xl font-thin py-1 ml-[10%] md:ml-0">Place : {n.city}</div>
               <div className="phone text-xl font-thin py-1 ml-[10%] md:ml-0">Phone : {n.phone}</div>
-              <div className="phone bg-blue-600 w-60 text-white text-center rounded-md mt-4 cursor-pointer text-xl font-thin py-1 ml-[10%] md:ml-0" onClick={event=>buyOffer(event,n.title,n.imageone,n.city,n.price,n.dashkandn,n.category)}>Buy Offer 100 Point</div>
+              
+                {/* event=>buyOffer(event,n.title,n.imageone,n.city,n.price,n.dashkandn,n.category) */}
+              <div className="phone bg-blue-600 w-60 text-white text-center rounded-md mt-4 cursor-pointer text-xl font-thin py-1 ml-[10%] md:ml-0" onClick={
+                ()=>{
+                  Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, I buy it!'
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                      buyOffer(n.title,n.imageone,n.city,n.price,n.dashkandn,n.category)
+                    }
+                  })
+                }
+              }>Buy Offer 100 Point</div>
               <Link to='/Service'><p className='text-2xl italic text-center ml-[10%] md:ml-0 md:text-left py-5 flex items-center text-gray-500'>Back <i class="fa-solid fa-backward mt-2 ml-4"></i></p></Link>
   
           </div>
@@ -130,18 +138,7 @@ export default function ServiceDetail() {
     }else if(n.category=='mall' || n.category=='place'){
       return(
         <Fragment>
-            {showmodalKrdra?<div className="modal fixed z-30 flex justify-center items-center bg-opacity-20 bg-black h-screen w-screen">
-                <div className='bg-green-400 p-4 text-white w-80 rounded-md'>
-                    <div className="remove flex justify-between items-center"><p>Successfully you bought</p><i class="fa-solid fa-xmark text-red-600 text-4xl text-right cursor-pointer" onClick={removeModalKrdrawak}></i></div>
-                </div>
-            </div>:''}
-
-            {showmodal?<div className="modal fixed z-30 flex justify-center items-center bg-opacity-20 bg-black h-screen w-screen">
-                <div className='bg-green-400 p-4 text-white rounded-md'>
-                    <div className="remove flex justify-between"><p className='text-2xl'>Warning</p><i class="fa-solid fa-xmark text-red-600 text-4xl text-right cursor-pointer" onClick={removeModal}></i></div>
-                    <p>Doesn't Have enough Point to buy this offer</p>
-                </div>
-            </div>:''}
+  
         <div className="coursel md:ml-5 rounded-md md:mb-20">
             <Carousel className='w-[30vw] h-[30vh] border-none hover:border-none rounded-md' 
               showArrows={false}

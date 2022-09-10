@@ -14,27 +14,31 @@ export default function Place() {
   const isAuth=useSelector((state) => state.login.isAuth)
   const navigate=useNavigate()
   const [filt,setFilt]=useState(false)
+  let [pagin,setPagin]=useState('1')
+  let [min,setmin]=useState(0)
+  let [max,setmax]=useState(6)
   let [place,setPlace]=useState('all')
   let [city,setCity]=useState('all')
   var item ;
-  items()
+  
 
   const isactive = useSelector((state) => state.nav.nav)
     const dispatch = useDispatch()
     function ChangeActive(name){
       dispatch(changeRoute(name))
   }
+  items(min,max)
   useEffect(()=>{
     dispatch(changeRoute('Place'))
     dispatch(login(User[parseInt(username.id)-1]))
-  },[])
+  })
   if(isAuth==false || localStorage.getItem('isAuthed')!=='true'){
     return navigate('/login')
   }
-  function items(){
+  function items(min,max){
     if(place=='all'){
       if(city=='all'){
-         item = PlaceJson.map(((w)=> {
+         item = PlaceJson.filter(w=>w.id>min && w.id<=max).map(((w)=> {
           return(
             <div className="card w-72">
                   <div className="image overflow-hidden rounded-md ">
@@ -114,6 +118,12 @@ export default function Place() {
     setCity(name)
     items()
   }
+  const activePaginate=(event,name,num1,num2)=>{
+    setPagin(name)
+    setmin(num1)
+    setmax(num2)
+    items(min,max)
+  }
  
   function changeFilter(){
     setFilt(!filt)
@@ -162,6 +172,11 @@ export default function Place() {
           </div>
         </div>
         </div> 
+        {place=='all'&&city=='all'?<div className="paginage flex justify-center mt-5 gap-1 mb-2">
+          <div className={`${pagin=='1'?'bg-slate-200 text-blue-500 shadow-xl':'bg-blue-500 text-white'} 1 w-12 h-12 cursor-pointer rounded-full flex justify-center items-center`} onClick={event=>activePaginate(event,'1',0,6)}>1</div>
+          <div className={`${pagin=='2'?'bg-slate-200 text-blue-500 shadow-xl':'bg-blue-500 text-white'} 2 w-12 h-12 cursor-pointer rounded-full flex justify-center items-center`} onClick={event=>activePaginate(event,'2',6,12)}>2</div>
+          <div className={`${pagin=='3'?'bg-slate-200 text-blue-500 shadow-xl':'bg-blue-500 text-white'} 3 w-12 h-12 cursor-pointer rounded-full flex justify-center items-center`} onClick={event=>activePaginate(event,'3',12,18)}>3</div>
+        </div>:''}
     </Fragment>
   )
 }
