@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import {changeRoute} from '../app/Slice/nav'
 import User from '../data/user.json'
 import {login} from '../app/Slice/login'
+import { Navigate } from "react-router-dom"
 
 export default function Home() {
 
@@ -18,7 +19,7 @@ export default function Home() {
     dispatch(login(User[parseInt(username.id)-1]))
   })
   if(isAuth==false || localStorage.getItem('isAuthed')!=='true'){
-    return navigate('/login')
+    return <Navigate replace to="/login"   />
   }
   return (
     <Fragment>
@@ -37,7 +38,7 @@ export default function Home() {
            
 <div className="image mt-4 ml-4 absolute transition-all duration-[80s]
            border-2 rounded-full border-solid w-[65%] h-[65%] top-[12%] right-[18%]">
-            <div className="triangle hover:rotate-45 hover:scale-125 hover:border-b-gray-400 duration-700 absolute top-[90%] right-[40%] -rotate-90"></div>
+            <div className="triangle hover:rotate-45 hover:scale-125 hover:border-b-gray-400 duration-700 absolute top-[90%] right-[63%] -rotate-[65deg]"></div>
 </div>
 
         
@@ -50,8 +51,7 @@ export default function Home() {
           </div>
           <div className="nusin mt-4 md:mt-0 text-center md:text-left md:text-xl lg:text-2xl text-black lg:ml-24 md:ml-12 w-full  z-20">
             <p>Wellcome to <span class="text-green-600 text-2xl">Tourist Guide</span></p>
-            <p>In our Website you maght now about alot of hotel <br /> motel places and malls, click here to know
-            abut all our service and offers</p> <br />
+            <p>From this website you can get acquainted with all hotels, motels, malls and tourist attractions in Kurdistan, Join us and enjoy our unique services for tourists</p> <br />
             <p className='m-auto md:m-0 text-green-600 text-xl rounded-md text-center sm:text-left cursor-pointer'><Link to='/service'> More Service <i class="fa-solid fa-arrow-right"></i></Link></p>
           </div>
         </div>

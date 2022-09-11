@@ -78,7 +78,7 @@ export default function ServiceDetail() {
     if(n.category=='hotel' || n.category=='motel'){
       return(
         <Fragment>
-        <div className="coursel  md:ml-5 rounded-md md:mb-24 mb-14">
+        <div className="coursel m-auto md:ml-5 rounded-md md:mb-24 md:mt-2">
             <Carousel className='md:w-[30vw] w-[80%] mx-[10%] mb-10 mt-5 h-[30vh] border-none hover:border-none rounded-md' 
               showArrows={false}
               showThumbs={false}
@@ -103,9 +103,9 @@ export default function ServiceDetail() {
                   </Carousel>
   
           </div>
-  <div className="datakan md:ml-32 md:mb-16 py-10 mt-10">
+  <div className="datakan md:ml-32 m-auto  py-10 mt-10  min-h-[85vh] sm:mt-10">
               <div className='text-5xl italic text-center md:text-left py-5'>{n.title}</div>
-              <div className="detail  ml-[10%] md:ml-0 w-[60%] md:w-[70%] text-xl py-2 font-thin text-left md:text-left">{n.detail}
+              <div className="detail  ml-[10%] md:ml-0 w-[60%] md:w-[70%] text-md py-2 font-thin text-left md:text-left">{n.detail}
               </div>
               <div className="asterra text-xl font-thin py-1 ml-[10%] md:ml-0">Star : &nbsp; <StarRatings
         rating={parseInt(n.star)}
@@ -114,7 +114,7 @@ export default function ServiceDetail() {
         starRatedColor='yellow'
       /> </div>
               <div className="price text-xl font-thin py-1 ml-[10%] md:ml-0">Price : {n.price}</div>
-              <div className="place text-xl font-thin py-1 ml-[10%] md:ml-0">Place : {n.city}</div>
+              <div className="place text-xl font-thin py-1 ml-[10%] md:ml-0">Place : {n.location}</div>
               <div className="phone text-xl font-thin py-1 ml-[10%] md:ml-0">Phone : {n.phone}</div>
               
                 {/* event=>buyOffer(event,n.title,n.imageone,n.city,n.price,n.dashkandn,n.category) */}
@@ -145,8 +145,8 @@ export default function ServiceDetail() {
       return(
         <Fragment>
   
-        <div className="coursel md:ml-5 rounded-md md:mb-20">
-            <Carousel className='w-[30vw] h-[30vh] border-none hover:border-none rounded-md' 
+        <div className="coursel m-auto md:ml-5 rounded-md md:mb-24 md:mt-2">
+            <Carousel className='md:w-[30vw] w-[80%] mx-[10%] mb-10 mt-5 h-[30vh] border-none hover:border-none rounded-md' 
               showArrows={false}
               showThumbs={false}
               showIndicators={false}
@@ -170,11 +170,11 @@ export default function ServiceDetail() {
                   </Carousel>
   
           </div>
-  <div className="datakan ml-32 mb-16">
+  <div className="md:ml-32 m-auto  py-10 mt-10  min-h-[85vh] sm:mt-10">
               <div className='text-5xl italic '>{n.title}</div>
-              <div className="detail w-[70%] text-xl py-2 font-thin">{n.detail}
+              <div className="detail w-[70%] text-md py-2 font-thin">{n.detail}
               </div>
-              <div className="place text-xl font-thin py-1">Place : {n.city}</div>
+              <div className="place text-xl font-thin py-1">Place : {n.location}</div>
               <div className="phone bg-blue-600 w-60 text-white text-center rounded-md mt-4 cursor-pointer text-xl font-thin py-1 ml-[10%] md:ml-0" onClick={event=>buyOffer(event,n.title,n.imageone,n.city,n.price,n.dashkandn,n.category)}>Buy Offer 100 Point</div>
               <Link to='/Service'><p className='text-2xl italic text-center ml-[10%] md:ml-0 md:text-left py-5 flex items-center text-gray-500'>Back <i class="fa-solid fa-backward mt-2 ml-4"></i></p></Link>
 

@@ -24,11 +24,10 @@ export default function About() {
   return (
     <Fragment>
         <Header />
-        <div className='block m-auto md:m-0 md:flex h-[80vh] md:justify-evenly md:items-center'>
+        <div className='block m-auto md:m-0 md:flex min-h-[80vh] md:justify-evenly md:items-center'>
         <div className="datakan md:ml-8">
           <p className='text-4xl text-center md:text-left font-thin text-green-500 mt-10'>Tourist Guide</p><br />
-          <p className='text-2xl text-center md:text-left  font-thin text-slate-400 mt-4 w-[100%] md:w-[70%]'>In our Website you maght now about alot of hotel  motel places and malls, click here to know
-            abut all our service and offers</p>
+          <p className='text-2xl text-center md:text-left  font-thin text-slate-400 mt-4 w-[100%] md:w-[70%]'>From this website you can get acquainted with all hotels, motels, malls and tourist attractions in Kurdistan, Join us and enjoy our unique services for tourists</p>
             <p className='text-2xl text-center md:text-left  font-thin text-slate-600'>You can follow us in sicial media</p>
             <p className='text-center md:text-left'>
             <i class="fa-brands fa-facebook text-blue-500 text-4xl p-2 mt-2"></i>
@@ -38,7 +37,8 @@ export default function About() {
             <i class="fa-brands fa-snapchat text-yellow-300 text-4xl p-2 mt-2"></i>
             </p>
         </div>
-          <div className="map ml-[10%] mt-10 md:mr-20">
+          <div className="map ml-[10%] mt-10 md:mr-20 py-2">
+            <p className='text-gray-600 text-md py-1'>Our Office in Map :</p>
 <Map />
           </div>
         </div>

@@ -157,7 +157,7 @@ export default function Place() {
                 <div className='flex items-center text-md py-1 cursor-pointer' onClick={()=>changecity('all')}><div className={`mx-4 w-3 h-3  border border-green-600 ${city=='all'?'bg-green-600':'bg-white'}`}></div> All </div>
                 <div className='flex items-center text-md py-1 cursor-pointer' onClick={()=>changecity('Sulemani')}><div className={`mx-4 w-3 h-3  border border-green-600 ${city=='Sulemani'?'bg-green-600':'bg-white'}`}></div> Sulemani </div>
                 <div className='flex items-center text-md py-1 cursor-pointer' onClick={()=>changecity('Hawler')}><div className={`mx-4 w-3 h-3  border border-green-600 ${city=='Hawler'?'bg-green-600':'bg-white'}`}></div> Hawler </div>
-                <div className='flex items-center text-md py-1 cursor-pointer' onClick={()=>changecity('duhok')}><div className={`mx-4 w-3 h-3  border border-green-600 ${city=='duhok'?'bg-green-600':'bg-white'}`}></div> Duhok </div>
+                <div className='flex items-center text-md py-1 cursor-pointer' onClick={()=>changecity('Duhok')}><div className={`mx-4 w-3 h-3  border border-green-600 ${city=='Duhok'?'bg-green-600':'bg-white'}`}></div> Duhok </div>
               </div>
             </div>
             </div>
