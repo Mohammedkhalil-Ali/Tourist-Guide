@@ -39,7 +39,7 @@ export default function About() {
         </div>
           <div className="map md:ml-[10%] mt-10 md:mr-20 py-2 ">
             <p className='text-gray-600 text-md py-1 ml-[5%] md:ml-0'>Our Office in Map :</p>
-<div className='ml-[5%] md:ml-0'><Map/></div>
+<div className='ml-[5%] md:ml-0 md:w-[400px]'><Map/></div>
           </div>
         </div>
           <footer className='h-[10vh]'>
