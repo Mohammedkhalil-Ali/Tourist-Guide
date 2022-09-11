@@ -40,7 +40,7 @@ export default function Service() {
   return (
     <Fragment>
         <Header />
-        <div className="ml-2 mt-3"> 
+        <div className="ml-2 mt-3 flex justify-center"> 
           <div className="hamukartakan grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:gap-10 md:gap-6 gap-5 items-center justify-end">
 {item}
           </div>
