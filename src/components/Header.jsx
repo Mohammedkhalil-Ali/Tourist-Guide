@@ -31,7 +31,7 @@ function ChangeShow(){
     <Fragment>
         <header class="w-100vw h-[10vh] z-50 sticky lg:relative top-0 shadow-sm bg-green-600 text-[#ffffff] overflow-hidden "  id="home">
         <div class="logo h-[10vh] w-[100vw] flex justify-between items-center">
-            <p class="w-5/6 md:w-4/6 pl-8 text-2xl font-mono text-[#ffffff]"><span class="text-teal-200 text-4xl">T</span>ourist<span class="text-teal-200 text-4xl">G</span>uide</p>
+            <p class="w-5/6 md:w-4/6 pl-8 text-xl md:text-2xl font-mono text-[#ffffff]"><span class="text-teal-200 text-3xl md:text-4xl">T</span>ourist<span class="text-teal-200 text-3xl md:text-4xl">G</span>uide</p>
         <nav class="text-[#ffffff] text-xl font-mono
         ">
             <Link to='/home'   className={`hidden
@@ -111,9 +111,9 @@ function ChangeShow(){
                         >Store</Link>
 
         </nav>
-        <div className="image flex justify-end md:justify-start items-center mr-4  md:mr-0 md:ml-8">
-            <Link to='/profile' className='w-12 lg:w-12 h-12'><img src={`${username.UserImage}`} alt="" srcset="" className='w-12 lg:w-12 h-12 object-fill rounded-full ' /> </Link>
-            <div className='ml-2 cursor-pointer text-lg' onClick={Logout}>Logout</div>
+        <div className="image flex justify-center md:justify-start items-center mr-4  md:mr-0 md:ml-8">
+            <div className='w-12 lg:w-12 h-12 mt-4 ml-5'><Link to='/profile' className='w-12 lg:w-12 h-12'><img src={`${username.UserImage}`} alt="" srcset="" className='w-8 md:w-12 lg:w-12 h-8 md:h-12 object-fill rounded-full ' /> </Link></div>
+            <div className='md:ml-2 cursor-pointer text-md md:text-lg' onClick={Logout}>Logout</div>
         </div>
      {/* @click="show = !show" */}
             <div class="hamburger visible  lg:invisible pr-8" onClick={()=>{ChangeShow()}}>
