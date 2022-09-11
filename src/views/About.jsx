@@ -37,9 +37,9 @@ export default function About() {
             <i class="fa-brands fa-snapchat text-yellow-300 text-4xl p-2 mt-2"></i>
             </p>
         </div>
-          <div className="map ml-[10%] mt-10 md:mr-20 py-2">
-            <p className='text-gray-600 text-md py-1'>Our Office in Map :</p>
-<Map />
+          <div className="map md:ml-[10%] mt-10 md:mr-20 py-2 ">
+            <p className='text-gray-600 text-md py-1 ml-[5%] md:ml-0'>Our Office in Map :</p>
+<div className='ml-[5%] md:ml-0'><Map/></div>
           </div>
         </div>
           <footer className='h-[10vh]'>
