@@ -17,7 +17,7 @@ export default function Login() {
             if(User[index].email==form.email&&User[index].password==form.password){
                 setError('')
                 dispatch(login(User[index]))
-                navigate('/');
+                navigate('/home');
             }else{
                 setError('Error')
             } 

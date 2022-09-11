@@ -25,7 +25,8 @@ export default function router() {
     <Routes>
       <Route path="/login" element={<Login />} />
       <Route path="/profile" element={<Profile />} />
-      <Route path="/" element={<Home />} />
+      <Route path="/home" element={<Home />} />
+      <Route path="/" element={<Login />} />
       <Route path="/place" element={<Place />} />
       <Route path="/service" element={<Service />} />
       <Route path="/about" element={<About />} />

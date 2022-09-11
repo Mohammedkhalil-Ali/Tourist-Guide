@@ -34,7 +34,7 @@ function ChangeShow(){
             <p class="w-5/6 md:w-4/6 pl-8 text-2xl font-mono text-[#ffffff]"><span class="text-teal-200 text-4xl">T</span>ourist<span class="text-teal-200 text-4xl">G</span>uide</p>
         <nav class="text-[#ffffff] text-xl font-mono
         ">
-            <Link to='/'   className={`hidden
+            <Link to='/home'   className={`hidden
                         lg:inline
                         lg:px-10
                         xl:px-16
@@ -137,7 +137,7 @@ function ChangeShow(){
         // :class="show?'visible h-[85vh]':'invisible h-0'"
        
                 >
-                    <Link to='/'>
+                    <Link to='/home'>
                     <p 
                     className={`
                     hover:bg-green-500
