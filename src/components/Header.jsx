@@ -119,7 +119,7 @@ function ChangeShow(){
             <div class="hamburger visible  lg:invisible pr-8" onClick={()=>{ChangeShow()}}>
                 <div className={`hamburger-1
                 ${show==true?'is-active':''}`
-                ///////
+                
             } id="hamburger" 
                     // :class="{ 'is-active': show }"
                 >
