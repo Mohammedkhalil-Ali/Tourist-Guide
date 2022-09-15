@@ -77,6 +77,19 @@
     },
     {
         "id":"6",
+        "category":"place",
+        "name":"Chavi Land",
+        "imageone":"http://1.bp.blogspot.com/-aZwgf9mjFDo/VTZ-Sqv5sbI/AAAAAAAACRU/LPRVkvf0G2Q/w1200-h630-p-k-no-nu/Chavy%2BLand.jpg",
+        "imagetwo":"https://rak-it.net/wp-content/uploads/2019/10/chavy-land2.jpg",
+        "imagethree":"https://pbs.twimg.com/media/CHnV9FGWwAAtUet?format=jpg&name=small",
+        "imagefour":"https://kurdistanboards.com/download/file.php?id=1134345",
+        "city":"Sulemani",
+        "title":"Chavi Land",
+        "detail":"Chavy Land is one of the largest tourist cities in the city of Sulaimaniya and the Kurdistan Region. Chavy Land is built on Goizha mountains (area of approximately 750,000 square meters). It is also the view of the city of Sulaimaniya. The project consists of fifty species of three-dimensional open world games (various open and closed games) in addition to containing telefric, wax museum, cinema, fountains, water, restaurants, shacks tourism, hotels, tourist cabins, social clubs, palaces, green spaces dedicated to sit and rest and several cafeterias and fastfood restaurants.",
+        "location":"Goizha,Circle of Malik Mahmoud, 31019 As Sulaymānīyah, Iraq"
+    },
+    {
+        "id":"7",
         "category":"motel",
         "name":"Zamo",
         "dashkandn":"15",
@@ -91,19 +104,6 @@
         "detail":"The Zamo Motel is a 3-star motel, offering free WiFi in all areas ,Rooms offers a flat-screen TV, a minibar and an en-suite bathroom with a shower and a bath. Some suites include a balcony and a living room.",
         "phone":"0750 124 8336",
         "location":"Salim Street, 46001 As Sulaymānīyah, Iraq"
-    },
-    {
-        "id":"7",
-        "category":"place",
-        "name":"Chavi Land",
-        "imageone":"http://1.bp.blogspot.com/-aZwgf9mjFDo/VTZ-Sqv5sbI/AAAAAAAACRU/LPRVkvf0G2Q/w1200-h630-p-k-no-nu/Chavy%2BLand.jpg",
-        "imagetwo":"https://rak-it.net/wp-content/uploads/2019/10/chavy-land2.jpg",
-        "imagethree":"https://pbs.twimg.com/media/CHnV9FGWwAAtUet?format=jpg&name=small",
-        "imagefour":"https://kurdistanboards.com/download/file.php?id=1134345",
-        "city":"Sulemani",
-        "title":"Chavi Land",
-        "detail":"Chavy Land is one of the largest tourist cities in the city of Sulaimaniya and the Kurdistan Region. Chavy Land is built on Goizha mountains (area of approximately 750,000 square meters). It is also the view of the city of Sulaimaniya. The project consists of fifty species of three-dimensional open world games (various open and closed games) in addition to containing telefric, wax museum, cinema, fountains, water, restaurants, shacks tourism, hotels, tourist cabins, social clubs, palaces, green spaces dedicated to sit and rest and several cafeterias and fastfood restaurants.",
-        "location":"Goizha,Circle of Malik Mahmoud, 31019 As Sulaymānīyah, Iraq"
     },
     {
         "id":"8",
