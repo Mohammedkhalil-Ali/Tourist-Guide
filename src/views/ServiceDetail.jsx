@@ -35,7 +35,7 @@ export default function ServiceDetail() {
     return navigate('/login')
   }
 
-    var buyOffer =(ntitle,nimageone,ncity,nprice,ndashkandn,category)=>{
+    var buyOffer =(ntitle,nimageone,ncity,ndashkandn,category)=>{
       var dt = new Date();
       dt.setDate(dt.getDate());
       let text1 = dt.toString();
@@ -49,7 +49,6 @@ export default function ServiceDetail() {
                 title:ntitle,
                 imageone:nimageone,
                 city:ncity,
-                price:nprice,
                 dashkandn:ndashkandn,
                 category:category,
                 katyKrdraw:text1,
@@ -122,7 +121,7 @@ export default function ServiceDetail() {
                 ()=>{
                   Swal.fire({
                     title: 'Are you sure?',
-                    text: "You won't be able to revert this!",
+                    text: "Do you Want to buy this",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
@@ -130,7 +129,7 @@ export default function ServiceDetail() {
                     confirmButtonText: 'Yes, I buy it!'
                   }).then((result) => {
                     if (result.isConfirmed) {
-                      buyOffer(n.title,n.imageone,n.city,n.price,n.dashkandn,n.category)
+                      buyOffer(n.title,n.imageone,n.city,n.dashkandn,n.category)
                     }
                   })
                 }
@@ -175,7 +174,24 @@ export default function ServiceDetail() {
               <div className="detail w-[70%] text-md py-2 font-thin">{n.detail}
               </div>
               <div className="place text-xl font-thin py-1">Place : {n.location}</div>
-              <div className="phone bg-blue-600 w-60 text-white text-center rounded-md mt-4 cursor-pointer text-xl font-thin py-1 ml-[10%] md:ml-0" onClick={event=>buyOffer(event,n.title,n.imageone,n.city,n.price,n.dashkandn,n.category)}>Buy Offer 100 Point</div>
+              <div className="phone bg-blue-600 w-60 text-white text-center rounded-md mt-4 cursor-pointer text-xl font-thin py-1 ml-[10%] md:ml-0"
+               onClick={
+                ()=>{
+                  Swal.fire({
+                    title: 'Are you sure?',
+                    text: "Do you Want to buy this",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, I buy it!'
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                      buyOffer(n.title,n.imageone,n.city,n.dashkandn,n.category)
+                    }
+                  })
+                }
+              }>Buy Offer 100 Point</div>
               <Link to='/Service'><p className='text-2xl italic text-center ml-[10%] md:ml-0 md:text-left py-5 flex items-center text-gray-500'>Back <i class="fa-solid fa-backward mt-2 ml-4"></i></p></Link>
 
 

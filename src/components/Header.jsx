@@ -77,6 +77,21 @@ function ChangeShow(){
                         // :class="isactive=='project'?'text-teal-200':''"
                         // @click="isactiveRoute('project')"
                         >Service</Link>
+                        <Link to='/store'   className={`
+                        hidden
+                        lg:inline
+                        lg:px-10
+                        xl:px-16
+                        h-[10vh]
+                        p-[20px]
+                        hover:bg-green-500
+                        cursor-pointer
+                        ${isactive=='Store'?'text-teal-200':''}
+                            `}
+                        onClick={()=>ChangeActive('Store')}
+                        // :class="isactive=='about'?'text-teal-200':''"
+                        // @click="isactiveRoute('about')"
+                        >Store</Link>
                         
             <Link to='/about'   className={`
                         hidden
@@ -94,21 +109,7 @@ function ChangeShow(){
                         // @click="isactiveRoute('about')"
                         >About</Link>
 
-            <Link to='/store'   className={`
-                        hidden
-                        lg:inline
-                        lg:px-10
-                        xl:px-16
-                        h-[10vh]
-                        p-[20px]
-                        hover:bg-green-500
-                        cursor-pointer
-                        ${isactive=='Store'?'text-teal-200':''}
-                            `}
-                        onClick={()=>ChangeActive('Store')}
-                        // :class="isactive=='about'?'text-teal-200':''"
-                        // @click="isactiveRoute('about')"
-                        >Store</Link>
+            
 
         </nav>
         <div className="image flex justify-center md:justify-start items-center mr-4  md:mr-0 md:ml-8">
