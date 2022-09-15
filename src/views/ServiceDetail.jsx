@@ -121,7 +121,7 @@ export default function ServiceDetail() {
                 ()=>{
                   Swal.fire({
                     title: 'Are you sure?',
-                    text: "Do you Want to buy this",
+                    text: "",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
@@ -179,7 +179,7 @@ export default function ServiceDetail() {
                 ()=>{
                   Swal.fire({
                     title: 'Are you sure?',
-                    text: "Do you Want to buy this",
+                    text: "",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
