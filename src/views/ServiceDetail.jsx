@@ -31,7 +31,7 @@ export default function ServiceDetail() {
     dispatch(changeRoute('Service'))
     dispatch(login(User[parseInt(username.id)-1]))
   },[])
-  if(isAuth==false || localStorage.getItem('isAuthed')!=='true'){
+  if(isAuth==false){
     return navigate('/login')
   }
 

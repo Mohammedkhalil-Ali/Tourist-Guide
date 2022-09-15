@@ -18,7 +18,7 @@ export default function Home() {
     dispatch(changeRoute('Home'))
     dispatch(login(User[parseInt(username.id)-1]))
   })
-  if(isAuth==false || localStorage.getItem('isAuthed')!=='true'){
+  if(isAuth==false){
     return <Navigate replace to="/login"   />
   }
   return (

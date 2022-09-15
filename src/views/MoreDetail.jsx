@@ -26,7 +26,7 @@ export default function MoreDetail() {
     dispatch(changeRoute('Place'))
     dispatch(login(User[parseInt(username.id)-1]))
   },[])
-  if(isAuth==false || localStorage.getItem('isAuthed')!=='true'){
+  if(isAuth==false){
     return navigate('/login')
   }
   const item=PlaceJson.filter(n=>n.id==id).map(n=>{
