@@ -190,6 +190,7 @@ export default function ServiceDetail() {
                       buyOffer(n.title,n.imageone,n.city,n.dashkandn,n.category)
                     }
                   })
+                  //
                 }
               }>Buy Offer 100 Point</div>
               <Link to='/Service'><p className='text-2xl italic text-center ml-[10%] md:ml-0 md:text-left py-5 flex items-center text-gray-500'>Back <i class="fa-solid fa-backward mt-2 ml-4"></i></p></Link>
