@@ -34,11 +34,11 @@ export default function Home() {
 
             
             <div className="square w-6 h-6 rounded-sm hover:rotate-45 hover:scale-125 hover:bg-gray-400 duration-700 absolute top-[26%] transition-all -rotate-[20deg] bg-gray-300"></div>
-            <div className="circle w-6 h-6 rounded-full  hover:scale-125 hover:bg-gray-400 duration-700 absolute -right-[1%] top-[30%] transition-all bg-gray-300"></div>
+            <div className="circle w-6 h-6 rounded-full  hover:scale-125 hover:bg-gray-400 duration-700 absolute -right-[1%] md:top-[30%] top-[26%] transition-all bg-gray-300"></div>
            
 <div className="image mt-4 ml-4 absolute transition-all duration-[80s]
            border-2 rounded-full border-solid w-[65%] h-[65%] top-[12%] right-[18%]">
-            <div className="triangle hover:rotate-45 hover:scale-125 hover:border-b-gray-400 duration-700 absolute top-[90%] right-[63%] -rotate-[65deg]"></div>
+            <div className="triangle hover:rotate-45 hover:scale-125 hover:border-b-gray-400 duration-700 absolute top-[88%] right-[55%] md:top-[90%] md:right-[63%] -rotate-[70deg] md:-rotate-[65deg]"></div>
 </div>
 
         
